@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lição 9: HTML Semântico</title>
+</head>
+<body>
+
+    <header>
+        <h1>📚 Lição 9: HTML Semântico</h1>
+        <nav>
+            <a href="index.html">← Voltar ao Índice</a> | 
+            <a href="08-tabelas.html">← Lição Anterior</a> |
+            <a href="10-html5.html">Próxima Lição →</a>
+        </nav>
+        <hr>
+    </header>
+
+    <main>
+        <section>
+            <h2>O que é semântica em HTML?</h2>
+            <p>
+                <strong>Semântica</strong> significa usar o elemento HTML certo para o propósito certo, 
+                comunicando não apenas visualmente, mas também o <strong>significado</strong> do conteúdo.
+            </p>
+
+            <h3>Exemplo:</h3>
+            <p>
+                ❌ &lt;div style="font-size: 32px; font-weight: bold;"&gt;Título&lt;/div&gt;
+            </p>
+            <p>
+                ✅ &lt;h1&gt;Título&lt;/h1&gt;
+            </p>
+            <p>
+                Ambos exibem um título grande e negrito, mas apenas &lt;h1&gt; comunica: 
+                "isto é um título principal".
+            </p>
+        </section>
+
+        <section>
+            <h2>Por que usar HTML semântico?</h2>
+            <ul>
+                <li><strong>Acessibilidade:</strong> Leitores de tela entendem melhor</li>
+                <li><strong>SEO:</strong> Motores de busca indexam melhor</li>
+                <li><strong>Manutenibilidade:</strong> Código mais legível e manutenível</li>
+                <li><strong>Compatibilidade:</strong> Melhor suporte em dispositivos antigos</li>
+                <li><strong>Semântica:</strong> Comunica intenção do desenvolvimento</li>
+                <li><strong>Validação:</strong> Código mais válido e correto</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Elementos semânticos estruturais do HTML5</h2>
+            <p>
+                <strong>Introduzidos em:</strong> HTML5 (2014)
+            </p>
+
+            <h3>&lt;header&gt;</h3>
+            <p>
+                <strong>Propósito:</strong> Define o cabeçalho de uma página ou seção
+            </p>
+            <p>
+                &lt;header&gt;<br>
+                &nbsp;&nbsp;&lt;h1&gt;Meu Blog&lt;/h1&gt;<br>
+                &nbsp;&nbsp;&lt;p&gt;Artigos sobre desenvolvimento web&lt;/p&gt;<br>
+                &lt;/header&gt;
+            </p>
+            <p>
+                <strong>Quando usar:</strong> Topo da página ou de uma seção; geralmente contém título
+            </p>
+
+            <h3>&lt;nav&gt;</h3>
+            <p>
+                <strong>Propósito:</strong> Define seção de navegação principal
+            </p>
+            <p>
+                &lt;nav&gt;<br>
+                &nbsp;&nbsp;&lt;ul&gt;<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;&lt;a href="/"&gt;Início&lt;/a&gt;&lt;/li&gt;<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;&lt;a href="/sobre"&gt;Sobre&lt;/a&gt;&lt;/li&gt;<br>
+                &nbsp;&nbsp;&lt;/ul&gt;<br>
+                &lt;/nav&gt;
+            </p>
+            <p>
+                <strong>Quando usar:</strong> Menu de navegação principal da página
+            </p>
+
+            <h3>&lt;main&gt;</h3>
+            <p>
+                <strong>Propósito:</strong> Define o conteúdo principal único da página
+            </p>
+            <p>
+                &lt;main&gt;<br>
+                &nbsp;&nbsp;&lt;article&gt;...&lt;/article&gt;<br>
+                &lt;/main&gt;
+            </p>
+            <p>
+                <strong>Quando usar:</strong> Contém o conteúdo único sem repetição (apenas um por página)
+            </p>
+
+            <h3>&lt;section&gt;</h3>
+            <p>
+                <strong>Propósito:</strong> Define uma seção temática de conteúdo
+            </p>
+            <p>
+                &lt;section&gt;<br>
+                &nbsp;&nbsp;&lt;h2&gt;Capítulo 1: Introdução&lt;/h2&gt;<br>
+                &nbsp;&nbsp;&lt;p&gt;Texto do capítulo...&lt;/p&gt;<br>
+                &lt;/section&gt;<br>
+                <br>
+                &lt;section&gt;<br>
+                &nbsp;&nbsp;&lt;h2&gt;Capítulo 2: Desenvolvimento&lt;/h2&gt;<br>
+                &nbsp;&nbsp;&lt;p&gt;Mais texto...&lt;/p&gt;<br>
+                &lt;/section&gt;
+            </p>
+            <p>
+                <strong>Quando usar:</strong> Agrupar conteúdo relacionado por tema mantendo hierarquia
+            </p>
+
+            <h3>&lt;article&gt;</h3>
+            <p>
+                <strong>Propósito:</strong> Define conteúdo independente e reutilizável
+            </p>
+            <p>
+                &lt;article&gt;<br>
+                &nbsp;&nbsp;&lt;h1&gt;Como aprender HTML&lt;/h1&gt;<br>
+                &nbsp;&nbsp;&lt;p&gt;Por: João Silva&lt;/p&gt;<br>
+                &nbsp;&nbsp;&lt;p&gt;Conteúdo do artigo...&lt;/p&gt;<br>
+                &lt;/article&gt;
+            </p>
+            <p>
+                <strong>Quando usar:</strong> Blog posts, notícias, comentários - coisas que podem ser reutilizadas
+            </p>
+
+            <h3>&lt;aside&gt;</h3>
+            <p>
+                <strong>Propósito:</strong> Define conteúdo secundário (barra lateral, anúncios, etc)
+            </p>
+            <p>
+                &lt;aside&gt;<br>
+                &nbsp;&nbsp;&lt;h3&gt;Artigos Populares&lt;/h3&gt;<br>
+                &nbsp;&nbsp;&lt;ul&gt;<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;&lt;a href="#"&gt;Artigo 1&lt;/a&gt;&lt;/li&gt;<br>
+                &nbsp;&nbsp;&lt;/ul&gt;<br>
+                &lt;/aside&gt;
+            </p>
+            <p>
+                <strong>Quando usar:</strong> Conteúdo tangencial, barras laterais, citações
+            </p>
+
+            <h3>&lt;footer&gt;</h3>
+            <p>
+                <strong>Propósito:</strong> Define o rodapé de uma página ou seção
+            </p>
+            <p>
+                &lt;footer&gt;<br>
+                &nbsp;&nbsp;&lt;p&gt;&copy; 2026 Meu Blog. Todos direitos reservados.&lt;/p&gt;<br>
+                &nbsp;&nbsp;&lt;nav&gt;&lt;a href="#"&gt;Privacidade&lt;/a&gt;&lt;/nav&gt;<br>
+                &lt;/footer&gt;
+            </p>
+            <p>
+                <strong>Quando usar:</strong> No final da página ou seção; contém info de rodapé
+            </p>
+        </section>
+
+        <section>
+            <h2>Exemplo de layout semântico completo</h2>
+            <p>
+                &lt;!DOCTYPE html&gt;<br>
+                &lt;html&gt;<br>
+                &lt;head&gt;...&lt;/head&gt;<br>
+                <br>
+                &lt;body&gt;<br>
+                &nbsp;&nbsp;&lt;!-- Cabeçalho do site --&gt;<br>
+                &nbsp;&nbsp;&lt;header&gt;<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&lt;h1&gt;Meu Blog&lt;/h1&gt;<br>
+                &nbsp;&nbsp;&lt;/header&gt;<br>
+                &nbsp;&nbsp;<br>
+                &nbsp;&nbsp;&lt;!-- Navegação principal --&gt;<br>
+                &nbsp;&nbsp;&lt;nav&gt;<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&lt;ul&gt;<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;&lt;a href="/"&gt;Início&lt;/a&gt;&lt;/li&gt;<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;&lt;a href="/sobre"&gt;Sobre&lt;/a&gt;&lt;/li&gt;<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&lt;/ul&gt;<br>
+                &nbsp;&nbsp;&lt;/nav&gt;<br>
+                &nbsp;&nbsp;<br>
+                &nbsp;&nbsp;&lt;!-- Conteúdo principal --&gt;<br>
+                &nbsp;&nbsp;&lt;main&gt;<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&lt;article&gt;<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;h2&gt;Meu Primeiro Artigo&lt;/h2&gt;<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;p&gt;Conteúdo...&lt;/p&gt;<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&lt;/article&gt;<br>
+                &nbsp;&nbsp;&lt;/main&gt;<br>
+                &nbsp;&nbsp;<br>
+                &nbsp;&nbsp;&lt;!-- Barra lateral --&gt;<br>
+                &nbsp;&nbsp;&lt;aside&gt;<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&lt;h3&gt;Populares&lt;/h3&gt;<br>
+                &nbsp;&nbsp;&lt;/aside&gt;<br>
+                &nbsp;&nbsp;<br>
+                &nbsp;&nbsp;&lt;!-- Rodapé --&gt;<br>
+                &nbsp;&nbsp;&lt;footer&gt;<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&lt;p&gt;&copy; 2026. Todos direitos.&lt;/p&gt;<br>
+                &nbsp;&nbsp;&lt;/footer&gt;<br>
+                &lt;/body&gt;<br>
+                &lt;/html&gt;
+            </p>
+        </section>
+
+        <section>
+            <h2>Elementos semânticos de conteúdo</h2>
+
+            <h3>&lt;address&gt;</h3>
+            <p>
+                <strong>Propósito:</strong> Define informações de contato
+            </p>
+            <p>
+                &lt;address&gt;<br>
+                &nbsp;&nbsp;Rua das Flores, 123<br>
+                &nbsp;&nbsp;São Paulo, SP<br>
+                &nbsp;&nbsp;email@example.com<br>
+                &lt;/address&gt;
+            </p>
+
+            <h3>&lt;time&gt;</h3>
+            <p>
+                <strong>Propósito:</strong> Marca data/hora do máquina-legível
+            </p>
+            <p>
+                &lt;p&gt;Publicado em &lt;time datetime="2026-02-25"&gt;25 de fevereiro&lt;/time&gt;&lt;/p&gt;
+            </p>
+
+            <h3>&lt;blockquote&gt;</h3>
+            <p>
+                <strong>Propósito:</strong> Marca uma citação em bloco
+            </p>
+            <p>
+                &lt;blockquote&gt;<br>
+                &nbsp;&nbsp;&lt;p&gt;A web é para todos&lt;/p&gt;<br>
+                &nbsp;&nbsp;&lt;footer&gt;— Tim Berners-Lee&lt;/footer&gt;<br>
+                &lt;/blockquote&gt;
+            </p>
+
+            <h3>&lt;quote&gt;</h3>
+            <p>
+                <strong>Propósito:</strong> Marca uma citação inline curta
+            </p>
+            <p>
+                &lt;p&gt;Como disse Tim, &lt;q&gt;a web é para todos&lt;/q&gt;.&lt;/p&gt;
+            </p>
+        </section>
+
+        <section>
+            <h2>Dicas de quando usar &lt;section&gt; vs &lt;article&gt;</h2>
+            <table border="1">
+                <thead>
+                    <tr>
+                        <th>Elemento</th>
+                        <th>Quando usar</th>
+                        <th>Exemplo</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>&lt;section&gt;</td>
+                        <td>Agrupar conteúdo relacionado por tema</td>
+                        <td>Capítulos de um livro</td>
+                    </tr>
+                    <tr>
+                        <td>&lt;article&gt;</td>
+                        <td>Conteúdo independente e reutilizável</td>
+                        <td>Post de blog, notícia</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section>
+            <h2>Boas práticas seminânticas</h2>
+            <ul>
+                <li>Use elementos semânticos apropriados para cada tipo de conteúdo</li>
+                <li>Não use &lt;div&gt; quando há elemento semântico apropriado</li>
+                <li>Mantenha hierarquia correta de títulos (&lt;h1&gt; a &lt;h6&gt;)</li>
+                <li>Use &lt;header&gt;, &lt;nav&gt;, &lt;main&gt;, &lt;footer&gt; para estrutura de página</li>
+                <li>Use &lt;section&gt; para agrupar conteúdo temático</li>
+                <li>Use &lt;article&gt; para conteúdo independente</li>
+                <li>Use &lt;aside&gt; para conteúdo tangencial</li>
+                <li>Valide seu HTML em <a href="https://validator.w3.org/">validator.w3.org</a></li>
+            </ul>
+        </section>
+
+    </main>
+
+    <footer>
+        <hr>
+        <nav>
+            <a href="index.html">← Voltar ao Índice</a> | 
+            <a href="08-tabelas.html">← Lição Anterior</a> |
+            <a href="10-html5.html">Próxima Lição →</a>
+        </nav>
+        <p><small>Tutorial de HTML - Lição 9 de 10</small></p>
+    </footer>
+
+</body>
+</html>

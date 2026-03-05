@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lição 2: Estrutura Básica do HTML</title>
+</head>
+<body>
+
+    <header>
+        <h1>📚 Lição 2: Estrutura Básica do HTML</h1>
+        <nav>
+            <a href="index.html">← Voltar ao Índice</a> | 
+            <a href="01-introducao.html">← Lição Anterior</a> |
+            <a href="03-textos-paragrafos.html">Próxima Lição →</a>
+        </nav>
+        <hr>
+    </header>
+
+    <main>
+        <section>
+            <h2>A estrutura fundamental de um documento HTML</h2>
+            <p>
+                Todo documento HTML válido segue uma estrutura específica. 
+                Esta estrutura garante que o navegador interprete corretamente o documento.
+            </p>
+        </section>
+
+        <!-- Exemplo completo com comentários -->
+        <section>
+            <h2>Código comentado - Documento HTML completo:</h2>
+            <p>
+                &lt;!DOCTYPE html&gt;<br>
+                <!-- DOCTYPE declara a versão do HTML (HTML5 neste caso) --><br>
+                <br>
+                &lt;html lang="pt-BR"&gt;<br>
+                <!-- Abre a tag raiz do documento. Lang especifica o idioma --><br>
+                <br>
+                &lt;head&gt;<br>
+                <!-- Seção de metadados e configurações do documento --><br>
+                &nbsp;&nbsp;&lt;meta charset="UTF-8"&gt;<br>
+                <!-- Define o conjunto de caracteres (UTF-8 para suportar acentos) --><br>
+                <br>
+                &nbsp;&nbsp;&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;<br>
+                <!-- Configura viewport para sites responsivos --><br>
+                <br>
+                &nbsp;&nbsp;&lt;title&gt;Minha Primeira Página&lt;/title&gt;<br>
+                <!-- Título que aparece na aba do navegador --><br>
+                &lt;/head&gt;<br>
+                <br>
+                &lt;body&gt;<br>
+                <!-- Aqui vai todo o conteúdo visível da página --><br>
+                &nbsp;&nbsp;&lt;h1&gt;Bem-vindo!&lt;/h1&gt;<br>
+                &nbsp;&nbsp;&lt;p&gt;Este é um parágrafo.&lt;/p&gt;<br>
+                &lt;/body&gt;<br>
+                <br>
+                &lt;/html&gt;<br>
+                <!-- Fecha o documento HTML --><br>
+            </p>
+        </section>
+
+        <section>
+            <h2>Elementos principais e sua história</h2>
+
+            <h3>1. &lt;!DOCTYPE html&gt;</h3>
+            <p>
+                <strong>Historicamente:</strong> Antes do HTML5, DOCTYPE era complexo e variado. 
+                Cada versão tinha uma declaração diferente (SGML, XHTML, etc).
+            </p>
+            <p>
+                <strong>HTML5 (2014):</strong> Simplificou enormemente: agora é apenas &lt;!DOCTYPE html&gt;
+            </p>
+            <p>
+                <strong>Por que existe:</strong> Informa ao navegador qual versão de HTML está sendo usada.
+            </p>
+
+            <h3>2. &lt;html&gt;</h3>
+            <p>
+                <strong>Criada em:</strong> HTML 1.0 (1991)
+            </p>
+            <p>
+                <strong>Propósito:</strong> Elemento raiz que envolve todo o documento.
+            </p>
+            <p>
+                <strong>Atributo lang:</strong> Especifica o idioma do documento (acessibilidade e SEO).
+            </p>
+
+            <h3>3. &lt;head&gt;</h3>
+            <p>
+                <strong>Criada em:</strong> HTML 1.0 (1991)
+            </p>
+            <p>
+                <strong>Propósito:</strong> Contém metadados sobre o documento. 
+                Nada aqui é exibido no corpo da página (exceto &lt;title&gt;).
+            </p>
+            <p>
+                <strong>Conteúdo típico:</strong>
+            </p>
+            <ul>
+                <li>&lt;meta&gt; - Metadados do documento</li>
+                <li>&lt;title&gt; - Título da página</li>
+                <li>&lt;link&gt; - Vinculação com arquivos externos (CSS)</li>
+                <li>&lt;style&gt; - Estilos CSS</li>
+                <li>&lt;script&gt; - Scripts JavaScript</li>
+            </ul>
+
+            <h3>4. &lt;meta charset="UTF-8"&gt;</h3>
+            <p>
+                <strong>Criada em:</strong> HTML 2.0 (1995)
+            </p>
+            <p>
+                <strong>Por que foi criada:</strong> Diferentes idiomas usam diferentes conjuntos de caracteres. 
+                UTF-8 é o padrão moderno que suporta todos os alfabetos do mundo.
+            </p>
+            <p>
+                <strong>Importante:</strong> Sempre coloque isto como o primeiro &lt;meta&gt; do &lt;head&gt;
+            </p>
+
+            <h3>5. &lt;meta name="viewport"&gt;</h3>
+            <p>
+                <strong>Criada em:</strong> 2010 (durante a era móvel)
+            </p>
+            <p>
+                <strong>Por que foi criada:</strong> Com o aumento de dispositivos móveis, 
+                era necessário informar ao navegador como lidar com diferentes tamanhos de tela.
+            </p>
+            <p>
+                <strong>O que faz:</strong> 
+            </p>
+            <ul>
+                <li>width=device-width - Usa a largura real do dispositivo</li>
+                <li>initial-scale=1.0 - Define zoom inicial em 100%</li>
+            </ul>
+
+            <h3>6. &lt;title&gt;</h3>
+            <p>
+                <strong>Criada em:</strong> HTML 1.0 (1991)
+            </p>
+            <p>
+                <strong>Propósito:</strong> Define o título da página que aparece na aba do navegador, 
+                nos marcadores e nos resultados de busca.
+            </p>
+            <p>
+                <strong>Importante para:</strong> SEO, experiência do usuário e acessibilidade.
+            </p>
+
+            <h3>7. &lt;body&gt;</h3>
+            <p>
+                <strong>Criada em:</strong> HTML 1.0 (1991)
+            </p>
+            <p>
+                <strong>Propósito:</strong> Contém todo o conteúdo visível da página ao usuário. 
+                Tudo que o visitante vê está dentro do &lt;body&gt;.
+            </p>
+        </section>
+
+        <section>
+            <h2>Estrutura visual (sem CSS)</h2>
+            <p>
+                Usando apenas HTML, você pode criar uma estrutura clara:
+            </p>
+
+            <p>
+                <strong>┌─────────────────────────────┐</strong><br>
+                <strong>│ &lt;header&gt; (Cabeçalho)    │</strong><br>
+                <strong>├─────────────────────────────┤</strong><br>
+                <strong>│ &lt;nav&gt; (Navegação)      │</strong><br>
+                <strong>├─────────────────────────────┤</strong><br>
+                <strong>│ &lt;main&gt; (Conteúdo)      │</strong><br>
+                <strong>│   &lt;section&gt;            │</strong><br>
+                <strong>│   &lt;article&gt;            │</strong><br>
+                <strong>│ &lt;/main&gt;               │</strong><br>
+                <strong>├─────────────────────────────┤</strong><br>
+                <strong>│ &lt;aside&gt; (Lateral)      │</strong><br>
+                <strong>├─────────────────────────────┤</strong><br>
+                <strong>│ &lt;footer&gt; (Rodapé)      │</strong><br>
+                <strong>└─────────────────────────────┘</strong>
+            </p>
+        </section>
+
+        <section>
+            <h2>Elementos blocos vs. inline</h2>
+
+            <h3>Blocos (ocupam linha inteira)</h3>
+            <ul>
+                <li>&lt;div&gt; - Divisão genérica</li>
+                <li>&lt;p&gt; - Parágrafo</li>
+                <li>&lt;h1&gt; a &lt;h6&gt; - Títulos</li>
+                <li>&lt;header&gt;, &lt;footer&gt;, &lt;section&gt; - Semânticos</li>
+            </ul>
+
+            <h3>Inline (fluem dentro do texto)</h3>
+            <ul>
+                <li>&lt;span&gt; - Contêiner genérico inline</li>
+                <li>&lt;a&gt; - Links</li>
+                <li>&lt;strong&gt;, &lt;em&gt;, &lt;b&gt;, &lt;i&gt; - Formatação</li>
+                <li>&lt;img&gt; - Imagens</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Checklist de estrutura básica</h2>
+            <p>
+                Use este checklist para verificar se seu documento HTML é válido:
+            </p>
+            <ul>
+                <li>☑ Começa com &lt;!DOCTYPE html&gt;</li>
+                <li>☑ Tem abertura &lt;html&gt; e fechamento &lt;/html&gt;</li>
+                <li>☑ Dentro de &lt;html&gt; tem &lt;head&gt; e &lt;body&gt;</li>
+                <li>☑ &lt;head&gt; contém &lt;meta charset="UTF-8"&gt;</li>
+                <li>☑ &lt;head&gt; contém &lt;title&gt;</li>
+                <li>☑ &lt;head&gt; contém &lt;meta viewport&gt; para mobile</li>
+                <li>☑ Todo conteúdo visível está em &lt;body&gt;</li>
+            </ul>
+        </section>
+
+    </main>
+
+    <footer>
+        <hr>
+        <nav>
+            <a href="index.html">← Voltar ao Índice</a> | 
+            <a href="01-introducao.html">← Lição Anterior</a> |
+            <a href="03-textos-paragrafos.html">Próxima Lição →</a>
+        </nav>
+        <p><small>Tutorial de HTML - Lição 2 de 10</small></p>
+    </footer>
+
+</body>
+</html>

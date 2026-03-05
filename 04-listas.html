@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lição 4: Listas</title>
+</head>
+<body>
+
+    <header>
+        <h1>📚 Lição 4: Listas</h1>
+        <nav>
+            <a href="index.html">← Voltar ao Índice</a> | 
+            <a href="03-textos-paragrafos.html">← Lição Anterior</a> |
+            <a href="05-links-navegacao.html">Próxima Lição →</a>
+        </nav>
+        <hr>
+    </header>
+
+    <main>
+        <section>
+            <h2>Três tipos de listas no HTML</h2>
+            <p>
+                HTML oferece três tipos de listas para organizar informações de forma estruturada.
+            </p>
+        </section>
+
+        <section>
+            <h2>1. Listas Desordenadas: &lt;ul&gt;</h2>
+            <p>
+                <strong>Criada em:</strong> HTML 1.0 (1991)
+            </p>
+            <p>
+                <strong>Propósito:</strong> Lista itens sem ordem específica. Cada item aparece com um marcador (bullet).
+            </p>
+
+            <h3>Código comentado:</h3>
+            <p>
+                &lt;!-- Marca o início da lista desordenada --&gt;<br>
+                &lt;ul&gt;<br>
+                &nbsp;&nbsp;&lt;!-- Cada &lt;li&gt; é um item da lista --&gt;<br>
+                &nbsp;&nbsp;&lt;li&gt;Primeiro item&lt;/li&gt;<br>
+                &nbsp;&nbsp;&lt;li&gt;Segundo item&lt;/li&gt;<br>
+                &nbsp;&nbsp;&lt;li&gt;Terceiro item&lt;/li&gt;<br>
+                &lt;/ul&gt;
+            </p>
+
+            <h3>Resultado visual:</h3>
+            <ul>
+                <li>Maçã</li>
+                <li>Banana</li>
+                <li>Laranja</li>
+            </ul>
+
+            <h3>Quando usar:</h3>
+            <ul>
+                <li>Receitas de ingredientes</li>
+                <li>Lista de compras</li>
+                <li>Características de um produto</li>
+                <li>Itens sem ordem específica</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>2. Listas Ordenadas: &lt;ol&gt;</h2>
+            <p>
+                <strong>Criada em:</strong> HTML 1.0 (1991)
+            </p>
+            <p>
+                <strong>Propósito:</strong> Lista itens em ordem específica. Cada item é numerado.
+            </p>
+
+            <h3>Código comentado:</h3>
+            <p>
+                &lt;!-- Marca o início da lista ordenada --&gt;<br>
+                &lt;ol&gt;<br>
+                &nbsp;&nbsp;&lt;!-- Numeração automática: 1, 2, 3... --&gt;<br>
+                &nbsp;&nbsp;&lt;li&gt;Primeiro passo&lt;/li&gt;<br>
+                &nbsp;&nbsp;&lt;li&gt;Segundo passo&lt;/li&gt;<br>
+                &nbsp;&nbsp;&lt;li&gt;Terceiro passo&lt;/li&gt;<br>
+                &lt;/ol&gt;
+            </p>
+
+            <h3>Resultado visual:</h3>
+            <ol>
+                <li>Acordar</li>
+                <li>Tomar café</li>
+                <li>Ir para o trabalho</li>
+            </ol>
+
+            <h3>Variações de numeração:</h3>
+            <p>
+                &lt;!-- type="a" usa letras minúsculas --&gt;<br>
+                &lt;ol type="a"&gt;<br>
+                &nbsp;&nbsp;&lt;li&gt;Primeiro&lt;/li&gt;<br>
+                &nbsp;&nbsp;&lt;li&gt;Segundo&lt;/li&gt;<br>
+                &lt;/ol&gt;
+            </p>
+
+            <p>
+                Valores válidos para type:
+            </p>
+            <ul>
+                <li>"1" - Números (padrão): 1, 2, 3</li>
+                <li>"A" - Letras maiúsculas: A, B, C</li>
+                <li>"a" - Letras minúsculas: a, b, c</li>
+                <li>"I" - Algarismos romanos maiúsculos: I, II, III</li>
+                <li>"i" - Algarismos romanos minúsculos: i, ii, iii</li>
+            </ul>
+
+            <h3>Quando usar:</h3>
+            <ul>
+                <li>Instruções passo a passo</li>
+                <li>Rankings</li>
+                <li>Procedimentos</li>
+                <li>Itens em ordem importante</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>3. Listas de Definição: &lt;dl&gt;</h2>
+            <p>
+                <strong>Criada em:</strong> HTML 2.0 (1995)
+            </p>
+            <p>
+                <strong>Propósito:</strong> Associa termos com suas definições. Perfeito para glossários.
+            </p>
+
+            <h3>Código comentado:</h3>
+            <p>
+                &lt;!-- dl = definition list (lista de definição) --&gt;<br>
+                &lt;dl&gt;<br>
+                &nbsp;&nbsp;&lt;!-- dt = definition term (termo para definir) --&gt;<br>
+                &nbsp;&nbsp;&lt;dt&gt;HTML&lt;/dt&gt;<br>
+                &nbsp;&nbsp;&lt;!-- dd = definition description (definição) --&gt;<br>
+                &nbsp;&nbsp;&lt;dd&gt;HyperText Markup Language - linguagem de marcação da web&lt;/dd&gt;<br>
+                &nbsp;&nbsp;<br>
+                &nbsp;&nbsp;&lt;dt&gt;CSS&lt;/dt&gt;<br>
+                &nbsp;&nbsp;&lt;dd&gt;Cascading Style Sheets - linguagem de estilos&lt;/dd&gt;<br>
+                &lt;/dl&gt;
+            </p>
+
+            <h3>Resultado visual:</h3>
+            <dl>
+                <dt><strong>SEO</strong></dt>
+                <dd>Search Engine Optimization - otimização para mecanismos de busca</dd>
+                
+                <dt><strong>API</strong></dt>
+                <dd>Application Programming Interface - interface de programação</dd>
+                
+                <dt><strong>URL</strong></dt>
+                <dd>Uniform Resource Locator - endereço de uma página web</dd>
+            </dl>
+
+            <h3>Quando usar:</h3>
+            <ul>
+                <li>Glossários</li>
+                <li>Definições de termos</li>
+                <li>Perguntas e respostas</li>
+                <li>Metadados estruturados</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Listas aninhadas (listas dentro de listas)</h2>
+            <p>
+                Você pode colocar uma lista dentro de outra lista:
+            </p>
+
+            <h3>Código comentado:</h3>
+            <p>
+                &lt;ol&gt;<br>
+                &nbsp;&nbsp;&lt;li&gt;Frutas<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&lt;ul&gt;<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;Maçã&lt;/li&gt;<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;Banana&lt;/li&gt;<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&lt;/ul&gt;<br>
+                &nbsp;&nbsp;&lt;/li&gt;<br>
+                &nbsp;&nbsp;&lt;li&gt;Vegetais<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&lt;ul&gt;<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;Cenoura&lt;/li&gt;<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;Brócolis&lt;/li&gt;<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&lt;/ul&gt;<br>
+                &nbsp;&nbsp;&lt;/li&gt;<br>
+                &lt;/ol&gt;
+            </p>
+
+            <h3>Resultado visual:</h3>
+            <ol>
+                <li>Frutas
+                    <ul>
+                        <li>Maçã</li>
+                        <li>Banana</li>
+                    </ul>
+                </li>
+                <li>Vegetais
+                    <ul>
+                        <li>Cenoura</li>
+                        <li>Brócolis</li>
+                    </ul>
+                </li>
+            </ol>
+        </section>
+
+        <section>
+            <h2>Elemento &lt;li&gt; (List Item)</h2>
+            <p>
+                <strong>Criada em:</strong> HTML 1.0 (1991)
+            </p>
+            <p>
+                <strong>Propósito:</strong> Representa um item em qualquer tipo de lista.
+            </p>
+            <p>
+                <strong>Importante:</strong> &lt;li&gt; deve estar sempre dentro de &lt;ul&gt;, &lt;ol&gt; ou &lt;dl&gt;.
+            </p>
+        </section>
+
+        <section>
+            <h2>Boas práticas com listas</h2>
+            <ul>
+                <li>Use &lt;ul&gt; para itens sem ordem específica</li>
+                <li>Use &lt;ol&gt; para itens que seguem uma sequência</li>
+                <li>Use &lt;dl&gt; para termos e definições</li>
+                <li>Sempre aninha listas corretamente (não deixe &lt;li&gt; órfão)</li>
+                <li>Não use listas apenas para formatação visual</li>
+                <li>Mantenha a semântica - escolha o tipo certo de lista</li>
+                <li>Use listas aninhadas para estrutura hierárquica</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Comparação visual dos três tipos</h2>
+            <table border="1">
+                <thead>
+                    <tr>
+                        <th>Tipo</th>
+                        <th>Tag</th>
+                        <th>Uso</th>
+                        <th>Marcador</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Desordenada</td>
+                        <td>&lt;ul&gt;</td>
+                        <td>Itens sem ordem</td>
+                        <td>• (bullet)</td>
+                    </tr>
+                    <tr>
+                        <td>Ordenada</td>
+                        <td>&lt;ol&gt;</td>
+                        <td>Itens em ordem</td>
+                        <td>1, 2, 3...</td>
+                    </tr>
+                    <tr>
+                        <td>Definição</td>
+                        <td>&lt;dl&gt;</td>
+                        <td>Termos e definições</td>
+                        <td>Indentado</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+    </main>
+
+    <footer>
+        <hr>
+        <nav>
+            <a href="index.html">← Voltar ao Índice</a> | 
+            <a href="03-textos-paragrafos.html">← Lição Anterior</a> |
+            <a href="05-links-navegacao.html">Próxima Lição →</a>
+        </nav>
+        <p><small>Tutorial de HTML - Lição 4 de 10</small></p>
+    </footer>
+
+</body>
+</html>

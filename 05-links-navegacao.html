@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lição 5: Links e Navegação</title>
+</head>
+<body>
+
+    <header>
+        <h1>📚 Lição 5: Links e Navegação</h1>
+        <nav>
+            <a href="index.html">← Voltar ao Índice</a> | 
+            <a href="04-listas.html">← Lição Anterior</a> |
+            <a href="06-imagens.html">Próxima Lição →</a>
+        </nav>
+        <hr>
+    </header>
+
+    <main>
+        <section>
+            <h2>O elemento &lt;a&gt; - Âncoras e Links</h2>
+            <p>
+                <strong>Criada em:</strong> HTML 1.0 (1991)
+            </p>
+            <p>
+                <strong>Propósito:</strong> A tag &lt;a&gt; (de "anchor", âncora) cria links que conectam páginas. 
+                É o elemento mais importante que torna a web uma rede.
+            </p>
+            <p>
+                <strong>Por que foi criada:</strong> Sem links, a web seria apenas um conjunto de documentos isolados. 
+                Tim Berners-Lee sabia que a capacidade de vincular documentos era fundamental.
+            </p>
+        </section>
+
+        <section>
+            <h2>Sintaxe básica do Link</h2>
+            <p>
+                &lt;a href="url"&gt;Texto do link&lt;/a&gt;
+            </p>
+
+            <h3>Exemplo com comentários:</h3>
+            <p>
+                &lt;!-- href = hypertext reference (referência do hipertexto) --&gt;<br>
+                &lt;a href="https://www.google.com"&gt;Ir para Google&lt;/a&gt;
+            </p>
+
+            <h3>Exemplo vivo:</h3>
+            <p>
+                Visite <a href="https://www.google.com">Google</a> para fazer uma busca.
+            </p>
+        </section>
+
+        <section>
+            <h2>Tipos de Links</h2>
+
+            <h3>1. Links Absolutos (URLs completas)</h3>
+            <p>
+                Link para um site externo com a URL completa:
+            </p>
+            <p>
+                &lt;a href="https://www.wikipedia.org"&gt;Wikipedia&lt;/a&gt;
+            </p>
+            <p>
+                <strong>Característica:</strong> Começa com protocolo (http://, https://)
+            </p>
+
+            <h3>2. Links Relativos (caminhos locais)</h3>
+            <p>
+                Link para outra página no mesmo site:
+            </p>
+            <p>
+                &lt;!-- Link para arquivo no mesmo diretório --&gt;<br>
+                &lt;a href="pagina.html"&gt;Próxima Página&lt;/a&gt;
+            </p>
+            <p>
+                &lt;!-- Link para arquivo em subdiretório --&gt;<br>
+                &lt;a href="pasta/arquivo.html"&gt;Arquivo em pasta&lt;/a&gt;
+            </p>
+            <p>
+                &lt;!-- Link para arquivo no diretório pai --&gt;<br>
+                &lt;a href="../index.html"&gt;Voltar para início&lt;/a&gt;
+            </p>
+
+            <h3>3. Links de Email</h3>
+            <p>
+                &lt;!-- mailto: abre o programa de email padrão --&gt;<br>
+                &lt;a href="mailto:seu@email.com"&gt;Envie um email&lt;/a&gt;
+            </p>
+
+            <h3>4. Links para Telefone</h3>
+            <p>
+                &lt;!-- tel: permite ligar em dispositivos móveis --&gt;<br>
+                &lt;a href="tel:+5511999999999"&gt;Ligar&lt;/a&gt;
+            </p>
+
+            <h3>5. Links Âncoras (para outra parte da página)</h3>
+            <p>
+                &lt;!-- Primeiro, defina um ID no elemento alvo --&gt;<br>
+                &lt;h2 id="secao-contato"&gt;Contato&lt;/h2&gt;<br>
+                <br>
+                &lt;!-- Depois, use # para referenciar o ID --&gt;<br>
+                &lt;a href="#secao-contato"&gt;Ir para Contato&lt;/a&gt;
+            </p>
+
+            <h3>6. Links entre páginas com âncora</h3>
+            <p>
+                &lt;a href="pagina.html#secao-especifica"&gt;Ir para seção&lt;/a&gt;
+            </p>
+        </section>
+
+        <section>
+            <h2>Atributos importantes da tag &lt;a&gt;</h2>
+
+            <h3>href</h3>
+            <p>
+                <strong>O que faz:</strong> Define o destino do link
+            </p>
+            <p>
+                <strong>Obrigatório:</strong> Sim
+            </p>
+
+            <h3>target</h3>
+            <p>
+                <strong>O que faz:</strong> Define como o link abre
+            </p>
+            <p>
+                &lt;a href="pagina.html" target="_blank"&gt;Abrir em nova aba&lt;/a&gt;
+            </p>
+            <p>
+                <strong>Valores:</strong>
+            </p>
+            <ul>
+                <li>"_blank" - Abre em nova aba/janela</li>
+                <li>"_self" - Abre na mesma aba (padrão)</li>
+                <li>"_parent" - Abre na janela pai (frameset)</li>
+                <li>"_top" - Abre no topo (frameset)</li>
+            </ul>
+
+            <h3>title</h3>
+            <p>
+                <strong>O que faz:</strong> Texto que aparece ao passar mouse (tooltip)
+            </p>
+            <p>
+                &lt;a href="index.html" title="Voltar para página inicial"&gt;Início&lt;/a&gt;
+            </p>
+
+            <h3>download</h3>
+            <p>
+                <strong>Criada em:</strong> HTML5 (2014)
+            </p>
+            <p>
+                <strong>O que faz:</strong> Força o download do arquivo em vez de abrir
+            </p>
+            <p>
+                &lt;a href="documento.pdf" download&gt;Baixar PDF&lt;/a&gt;
+            </p>
+
+            <h3>rel</h3>
+            <p>
+                <strong>O que faz:</strong> Define o tipo de relação entre documentos
+            </p>
+            <p>
+                &lt;a href="https://site-confiavel.com" rel="external"&gt;Site externo&lt;/a&gt;
+            </p>
+            <p>
+                <strong>Valores comuns:</strong>
+            </p>
+            <ul>
+                <li>"external" - Link para site externo</li>
+                <li>"nofollow" - Não contar para SEO</li>
+                <li>"noopener" - Segurança em links external com target="_blank"</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Boas práticas em links</h2>
+
+            <h3>1. Texto descritivo</h3>
+            <p>
+                ❌ &lt;a href="pagina.html"&gt;Clique aqui&lt;/a&gt;
+            </p>
+            <p>
+                ✅ &lt;a href="sobre.html"&gt;Saiba mais sobre nós&lt;/a&gt;
+            </p>
+
+            <h3>2. Links externos em nova aba</h3>
+            <p>
+                ✅ &lt;a href="externa.com" target="_blank" rel="noopener noreferrer"&gt;
+            </p>
+
+            <h3>3. Use URLs relativas para links internos</h3>
+            <p>
+                ❌ &lt;a href="https://meusite.com/produtos.html"&gt;<br>
+                ✅ &lt;a href="produtos.html"&gt;
+            </p>
+
+            <h3>4. Forneça contexto</h3>
+            <p>
+                ❌ &lt;a href="documento.pdf"&gt;Documento&lt;/a&gt;<br>
+                ✅ &lt;a href="documento.pdf"&gt;Baixar relatório completo (PDF, 2MB)&lt;/a&gt;
+            </p>
+
+            <h3>5. Use title para informações adicionais</h3>
+            <p>
+                ✅ &lt;a href="index.html" title="Voltar à página inicial"&gt;Início&lt;/a&gt;
+            </p>
+        </section>
+
+        <section>
+            <h2>Navegação estruturada com &lt;nav&gt;</h2>
+            <p>
+                <strong>Criada em:</strong> HTML5 (2014)
+            </p>
+            <p>
+                <strong>Propósito:</strong> Elemento semântico que marca seções de navegação principais.
+            </p>
+
+            <h3>Exemplo:</h3>
+            <p>
+                &lt;nav&gt;<br>
+                &nbsp;&nbsp;&lt;ul&gt;<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;&lt;a href="index.html"&gt;Início&lt;/a&gt;&lt;/li&gt;<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;&lt;a href="produtos.html"&gt;Produtos&lt;/a&gt;&lt;/li&gt;<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;&lt;a href="contato.html"&gt;Contato&lt;/a&gt;&lt;/li&gt;<br>
+                &nbsp;&nbsp;&lt;/ul&gt;<br>
+                &lt;/nav&gt;
+            </p>
+
+            <h3>Vantagens:</h3>
+            <ul>
+                <li>Melhora acessibilidade (leitores de tela identificam navegação)</li>
+                <li>Melhora SEO</li>
+                <li>Código mais semântico</li>
+                <li>Facilita manutenção</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Exemplo completo: Menu de navegação</h2>
+            <p>
+                &lt;nav&gt;<br>
+                &nbsp;&nbsp;&lt;h2&gt;Menu&lt;/h2&gt;<br>
+                &nbsp;&nbsp;&lt;ul&gt;<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;&lt;a href="index.html"&gt;Início&lt;/a&gt;&lt;/li&gt;<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;&lt;a href="sobre.html" title="Conheça a empresa"&gt;Sobre Nós&lt;/a&gt;&lt;/li&gt;<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;&lt;a href="servicos.html"&gt;Serviços&lt;/a&gt;&lt;/li&gt;<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;&lt;a href="contato.html"&gt;Contato&lt;/a&gt;&lt;/li&gt;<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;&lt;a href="https://blog.com" target="_blank" rel="external"&gt;Blog&lt;/a&gt;&lt;/li&gt;<br>
+                &nbsp;&nbsp;&lt;/ul&gt;<br>
+                &lt;/nav&gt;
+            </p>
+        </section>
+
+    </main>
+
+    <footer>
+        <hr>
+        <nav>
+            <a href="index.html">← Voltar ao Índice</a> | 
+            <a href="04-listas.html">← Lição Anterior</a> |
+            <a href="06-imagens.html">Próxima Lição →</a>
+        </nav>
+        <p><small>Tutorial de HTML - Lição 5 de 10</small></p>
+    </footer>
+
+</body>
+</html>

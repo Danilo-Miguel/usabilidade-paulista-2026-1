@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lição 3: Textos e Parágrafos</title>
+</head>
+<body>
+
+    <header>
+        <h1>📚 Lição 3: Textos e Parágrafos</h1>
+        <nav>
+            <a href="index.html">← Voltar ao Índice</a> | 
+            <a href="02-estrutura-basica.html">← Lição Anterior</a> |
+            <a href="04-listas.html">Próxima Lição →</a>
+        </nav>
+        <hr>
+    </header>
+
+    <main>
+        <section>
+            <h2>Elementos de texto e formatação</h2>
+            <p>
+                HTML oferece várias tags para estruturar e formatar texto. 
+                Cada uma tem um propósito semântico específico.
+            </p>
+        </section>
+
+        <section>
+            <h2>Parágrafos: &lt;p&gt;</h2>
+            <p>
+                <strong>Criada em:</strong> HTML 1.0 (1991)
+            </p>
+            <p>
+                <strong>Propósito:</strong> Representa um parágrafo de texto. 
+                O navegador automaticamente adiciona espaço antes e depois de cada parágrafo.
+            </p>
+            <p>
+                <strong>Código comentado:</strong>
+            </p>
+            <p>
+                &lt;p&gt;Este é meu primeiro parágrafo.&lt;/p&gt;<br>
+                &lt;p&gt;Este é meu segundo parágrafo.&lt;/p&gt;
+            </p>
+            <p>
+                <strong>Nota:</strong> Use &lt;p&gt; para parágrafos, não para espaçamento. 
+                (Para espaçamento, use CSS depois que aprender)
+            </p>
+        </section>
+
+        <section>
+            <h2>Títulos: &lt;h1&gt; a &lt;h6&gt;</h2>
+            <p>
+                <strong>Criadas em:</strong> HTML 1.0 (1991)
+            </p>
+            <p>
+                <strong>Propósito:</strong> Estruturam hierarquicamente o conteúdo da página.
+            </p>
+
+            <h3>Exemplo de hierarquia correta:</h3>
+            <p>
+                &lt;h1&gt;Título Principal (Site)&lt;/h1&gt;<br>
+                &nbsp;&nbsp;&lt;h2&gt;Seção Principal&lt;/h2&gt;<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&lt;h3&gt;Subseção&lt;/h3&gt;<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&lt;h3&gt;Outra Subseção&lt;/h3&gt;<br>
+                &nbsp;&nbsp;&lt;h2&gt;Outra Seção Principal&lt;/h2&gt;
+            </p>
+
+            <h3>Regras importantes:</h3>
+            <ul>
+                <li>Use apenas um &lt;h1&gt; por página (o título principal)</li>
+                <li>Não pule níveis (não vá de &lt;h1&gt; diretamente para &lt;h3&gt;)</li>
+                <li>Use para estrutura, não apenas para tamanho de fonte</li>
+                <li>Muito importante para SEO (otimização em busca)</li>
+                <li>Essencial para acessibilidade (leitores de tela)</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Formatação Semântica</h2>
+
+            <h3>&lt;strong&gt;</h3>
+            <p>
+                <strong>Criada em:</strong> HTML 2.0 (1995)
+            </p>
+            <p>
+                <strong>Propósito:</strong> Marca texto muito <strong>importante</strong> semanticamente.
+            </p>
+            <p>
+                &lt;p&gt;Este é um texto <strong>&lt;strong&gt;muito importante&lt;/strong&gt;</strong>&lt;/p&gt;
+            </p>
+            <p>
+                <strong>Diferença:</strong> Semanticamente significa importância (leitores de tela enfatizam), 
+                visualmente aparece em <strong>negrito</strong>.
+            </p>
+
+            <h3>&lt;em&gt;</h3>
+            <p>
+                <strong>Criada em:</strong> HTML 1.0 (1991)
+            </p>
+            <p>
+                <strong>Propósito:</strong> Marca texto que deve ser <em>enfatizado</em> (ênfase).
+            </p>
+            <p>
+                &lt;p&gt;Você <em>&lt;em&gt;deve&lt;/em&gt;</em> entender isto.&lt;/p&gt;
+            </p>
+            <p>
+                <strong>Diferença:</strong> Semanticamente significa ênfase, visualmente aparece em <em>itálico</em>.
+            </p>
+
+            <h3>&lt;b&gt; (não recomendado)</h3>
+            <p>
+                <strong>Criada em:</strong> HTML 1.0 (1991)
+            </p>
+            <p>
+                <strong>Propósito:</strong> Apenas formatação visual (sem significado semântico).
+            </p>
+            <p>
+                <strong>Quando usar:</strong> Raramente. Prefira &lt;strong&gt; para texto que precisa destaque semântico.
+            </p>
+
+            <h3>&lt;i&gt; (não recomendado)</h3>
+            <p>
+                <strong>Criada em:</strong> HTML 1.0 (1991)
+            </p>
+            <p>
+                <strong>Propósito:</strong> Apenas formatação visual (sem significado semântico).
+            </p>
+            <p>
+                <strong>Quando usar:</strong> Raramente. Às vezes para nomes científicos ou citações.
+            </p>
+        </section>
+
+        <section>
+            <h2>Formatação Técnica</h2>
+
+            <h3>&lt;code&gt;</h3>
+            <p>
+                <strong>Criada em:</strong> HTML 2.0 (1995)
+            </p>
+            <p>
+                <strong>Propósito:</strong> Marca código de computador inline: <code>var x = 5;</code>
+            </p>
+            <p>
+                &lt;p&gt;Use <code>&lt;code&gt;console.log()&lt;/code&gt;</code> em JavaScript&lt;/p&gt;
+            </p>
+
+            <h3>&lt;pre&gt;</h3>
+            <p>
+                <strong>Criada em:</strong> HTML 2.0 (1995)
+            </p>
+            <p>
+                <strong>Propósito:</strong> Preserva espaçamento e quebras de linha (para código ou poesia).
+            </p>
+            <p>
+                &lt;pre&gt;<br>
+                &nbsp;&nbsp;function teste() {<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;console.log("Alinhamento preservado!");<br>
+                &nbsp;&nbsp;}<br>
+                &lt;/pre&gt;
+            </p>
+
+            <h3>&lt;mark&gt;</h3>
+            <p>
+                <strong>Criada em:</strong> HTML5 (2014)
+            </p>
+            <p>
+                <strong>Propósito:</strong> Marca <mark>texto destacado</mark> (como um marca-texto amarelo).
+            </p>
+            <p>
+                &lt;p&gt;Encontrei a palavra <mark>&lt;mark&gt;importante&lt;/mark&gt;</mark>&lt;/p&gt;
+            </p>
+        </section>
+
+        <section>
+            <h2>Quebras de linha e linhas horizontais</h2>
+
+            <h3>&lt;br&gt;</h3>
+            <p>
+                <strong>Criada em:</strong> HTML 2.0 (1995)
+            </p>
+            <p>
+                <strong>Propósito:</strong> Cria uma quebra de linha dentro de um parágrafo.
+            </p>
+            <p>
+                &lt;p&gt;Mary had a little lamb&lt;br&gt;<br>
+                Its fleece was white as snow&lt;/p&gt;
+            </p>
+            <p>
+                <strong>Importante:</strong> &lt;br&gt; é uma tag vazia (não tem conteúdo). 
+                Tag vazia pode ser escrita como &lt;br&gt; ou &lt;br/&gt;
+            </p>
+
+            <h3>&lt;hr&gt;</h3>
+            <p>
+                <strong>Criada em:</strong> HTML 2.0 (1995)
+            </p>
+            <p>
+                <strong>Propósito:</strong> Cria uma linha horizontal para separar seções.
+            </p>
+            <p>
+                &lt;p&gt;Fim da seção&lt;/p&gt;<br>
+                &lt;hr&gt;<br>
+                &lt;p&gt;Início de nova seção&lt;/p&gt;
+            </p>
+        </section>
+
+        <section>
+            <h2>Outros elementos importantes</h2>
+
+            <h3>&lt;small&gt;</h3>
+            <p>
+                <strong>Criada em:</strong> HTML 3.2 (1997)
+            </p>
+            <p>
+                <strong>Propósito:</strong> Marca comentários não essenciais ou informações secundárias.
+            </p>
+            <p>
+                <small>Este texto é pequeno e complementar.</small>
+            </p>
+
+            <h3>&lt;del&gt;</h3>
+            <p>
+                <strong>Criada em:</strong> HTML 4.0 (1997)
+            </p>
+            <p>
+                <strong>Propósito:</strong> Marca texto <del>deletado</del>.
+            </p>
+            <p>
+                &lt;p&gt;O preço era <del>R$ 100</del> agora é R$ 50&lt;/p&gt;
+            </p>
+
+            <h3>&lt;ins&gt;</h3>
+            <p>
+                <strong>Criada em:</strong> HTML 4.0 (1997)
+            </p>
+            <p>
+                <strong>Propósito:</strong> Marca texto inserido/adicionado.
+            </p>
+            <p>
+                &lt;p&gt;Ele é <ins>muito talentoso</ins>&lt;/p&gt;
+            </p>
+
+            <h3>&lt;sub&gt; e &lt;sup&gt;</h3>
+            <p>
+                <strong>Criadas em:</strong> HTML 3.2 (1997)
+            </p>
+            <p>
+                <strong>Propósito:</strong> Subscrito (<sub>sub</sub>) e sobrescrito (<sup>sup</sup>).
+            </p>
+            <p>
+                &lt;p&gt;H<sub>2</sub>O = E=mc<sup>2</sup>&lt;/p&gt;
+            </p>
+        </section>
+
+        <section>
+            <h2>Boas práticas</h2>
+            <ul>
+                <li>Use &lt;strong&gt; em vez de &lt;b&gt;</li>
+                <li>Use &lt;em&gt; em vez de &lt;i&gt;</li>
+                <li>Use hierarquia correta de títulos (&lt;h1&gt; a &lt;h6&gt;)</li>
+                <li>Estruture com &lt;p&gt;, não com &lt;br&gt;</li>
+                <li>Use &lt;small&gt; para informações complementares</li>
+                <li>Prefira semântica visual</li>
+            </ul>
+        </section>
+
+    </main>
+
+    <footer>
+        <hr>
+        <nav>
+            <a href="index.html">← Voltar ao Índice</a> | 
+            <a href="02-estrutura-basica.html">← Lição Anterior</a> |
+            <a href="04-listas.html">Próxima Lição →</a>
+        </nav>
+        <p><small>Tutorial de HTML - Lição 3 de 10</small></p>
+    </footer>
+
+</body>
+</html>

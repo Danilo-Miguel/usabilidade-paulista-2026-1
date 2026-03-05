@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lição 8: Tabelas</title>
+</head>
+<body>
+
+    <header>
+        <h1>📚 Lição 8: Tabelas</h1>
+        <nav>
+            <a href="index.html">← Voltar ao Índice</a> | 
+            <a href="07-formularios.html">← Lição Anterior</a> |
+            <a href="09-semantica.html">Próxima Lição →</a>
+        </nav>
+        <hr>
+    </header>
+
+    <main>
+        <section>
+            <h2>Tabelas HTML</h2>
+            <p>
+                <strong>Criadas em:</strong> HTML 3.2 (1997)
+            </p>
+            <p>
+                <strong>Propósito:</strong> Exibir dados estruturados em linhas e colunas.
+            </p>
+            <p>
+                <strong>Histórico importante:</strong> No passado, tabelas eram usadas incorretamente para layout. 
+                Hoje, CSS handle layout e tabelas devem ser usadas apenas para dados tabulares.
+            </p>
+        </section>
+
+        <section>
+            <h2>Estrutura básica de uma tabela</h2>
+
+            <h3>Elementos principais:</h3>
+
+            <h4>&lt;table&gt;</h4>
+            <p>
+                <strong>Propósito:</strong> Container da tabela inteira
+            </p>
+
+            <h4>&lt;tr&gt;</h4>
+            <p>
+                <strong>Significa:</strong> Table Row (linha de tabela)
+            </p>
+            <p>
+                <strong>Propósito:</strong> Define uma linha
+            </p>
+
+            <h4>&lt;td&gt;</h4>
+            <p>
+                <strong>Significa:</strong> Table Data (dado de tabela)
+            </p>
+            <p>
+                <strong>Propósito:</strong> Define uma célula de dados
+            </p>
+
+            <h4>&lt;th&gt;</h4>
+            <p>
+                <strong>Significa:</strong> Table Header (cabeçalho de tabela)
+            </p>
+            <p>
+                <strong>Propósito:</strong> Define uma célula de cabeçalho (importante para semântica!)
+            </p>
+        </section>
+
+        <section>
+            <h2>Exemplo simples com comentários</h2>
+            <p>
+                &lt;!-- Tabela simple com 2 linhas e 3 colunas --&gt;<br>
+                &lt;table border="1"&gt;<br>
+                &nbsp;&nbsp;&lt;!-- Primeira linha é cabeçalho --&gt;<br>
+                &nbsp;&nbsp;&lt;tr&gt;<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&lt;th&gt;Nome&lt;/th&gt;<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&lt;th&gt;Idade&lt;/th&gt;<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&lt;th&gt;Cidade&lt;/th&gt;<br>
+                &nbsp;&nbsp;&lt;/tr&gt;<br>
+                &nbsp;&nbsp;&lt;!-- Segunda linha com dados --&gt;<br>
+                &nbsp;&nbsp;&lt;tr&gt;<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&lt;td&gt;João&lt;/td&gt;<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&lt;td&gt;28&lt;/td&gt;<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&lt;td&gt;São Paulo&lt;/td&gt;<br>
+                &nbsp;&nbsp;&lt;/tr&gt;<br>
+                &lt;/table&gt;
+            </p>
+
+            <h3>Resultado visual:</h3>
+            <table border="1">
+                <tr>
+                    <th>Nome</th>
+                    <th>Idade</th>
+                    <th>Cidade</th>
+                </tr>
+                <tr>
+                    <td>João</td>
+                    <td>28</td>
+                    <td>São Paulo</td>
+                </tr>
+                <tr>
+                    <td>Maria</td>
+                    <td>25</td>
+                    <td>Rio de Janeiro</td>
+                </tr>
+            </table>
+        </section>
+
+        <section>
+            <h2>Estrutura semântica completa</h2>
+            <p>
+                Para tabelas mais complexas, use &lt;thead&gt;, &lt;tbody&gt; e &lt;tfoot&gt;:
+            </p>
+
+            <h3>Código com comentários:</h3>
+            <p>
+                &lt;table border="1"&gt;<br>
+                &nbsp;&nbsp;&lt;!-- thead agrupa linhas de cabeçalho --&gt;<br>
+                &nbsp;&nbsp;&lt;thead&gt;<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&lt;tr&gt;<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;th&gt;Produto&lt;/th&gt;<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;th&gt;Preço&lt;/th&gt;<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;th&gt;Quantidade&lt;/th&gt;<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&lt;/tr&gt;<br>
+                &nbsp;&nbsp;&lt;/thead&gt;<br>
+                &nbsp;&nbsp;<br>
+                &nbsp;&nbsp;&lt;!-- tbody agrupa dados principais --&gt;<br>
+                &nbsp;&nbsp;&lt;tbody&gt;<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&lt;tr&gt;<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;td&gt;Laptop&lt;/td&gt;<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;td&gt;R$ 3000&lt;/td&gt;<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;td&gt;5&lt;/td&gt;<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&lt;/tr&gt;<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&lt;tr&gt;<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;td&gt;Mouse&lt;/td&gt;<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;td&gt;R$ 50&lt;/td&gt;<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;td&gt;15&lt;/td&gt;<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&lt;/tr&gt;<br>
+                &nbsp;&nbsp;&lt;/tbody&gt;<br>
+                &nbsp;&nbsp;<br>
+                &nbsp;&nbsp;&lt;!-- tfoot agrupa totais ou resumos --&gt;<br>
+                &nbsp;&nbsp;&lt;tfoot&gt;<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&lt;tr&gt;<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;th&gt;Total&lt;/th&gt;<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;th&gt;R$ 3050&lt;/th&gt;<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;th&gt;20&lt;/th&gt;<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&lt;/tr&gt;<br>
+                &nbsp;&nbsp;&lt;/tfoot&gt;<br>
+                &lt;/table&gt;
+            </p>
+
+            <h3>Resultado visual:</h3>
+            <table border="1">
+                <thead>
+                    <tr>
+                        <th>Produto</th>
+                        <th>Preço</th>
+                        <th>Quantidade</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Laptop</td>
+                        <td>R$ 3000</td>
+                        <td>5</td>
+                    </tr>
+                    <tr>
+                        <td>Mouse</td>
+                        <td>R$ 50</td>
+                        <td>15</td>
+                    </tr>
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <th>Total</th>
+                        <th>R$ 3050</th>
+                        <th>20</th>
+                    </tr>
+                </tfoot>
+            </table>
+        </section>
+
+        <section>
+            <h2>&lt;thead&gt;, &lt;tbody&gt; e &lt;tfoot&gt;</h2>
+
+            <h3>&lt;thead&gt;</h3>
+            <p>
+                <strong>Criada em:</strong> HTML 4.0 (1997)
+            </p>
+            <p>
+                <strong>Propósito:</strong> Agrupa semanticamente as linhas de cabeçalho
+            </p>
+            <p>
+                <strong>Benefícios:</strong>
+            </p>
+            <ul>
+                <li>Melhora semântica do documento</li>
+                <li>Leitores de tela identificam como cabeçalho</li>
+                <li>Permite CSS diferente para cabeçalho</li>
+                <li>Leitores de telas podem repetir cabeçalho ao rolar</li>
+            </ul>
+
+            <h3>&lt;tbody&gt;</h3>
+            <p>
+                <strong>Criada em:</strong> HTML 4.0 (1997)
+            </p>
+            <p>
+                <strong>Propósito:</strong> Agrupa o corpo principal da tabela
+            </p>
+
+            <h3>&lt;tfoot&gt;</h3>
+            <p>
+                <strong>Criada em:</strong> HTML 4.0 (1997)
+            </p>
+            <p>
+                <strong>Propósito:</strong> Agrupa linhas de resumo/total no final
+            </p>
+        </section>
+
+        <section>
+            <h2>Mesclagem de células</h2>
+
+            <h3>colspan (unir colunas)</h3>
+            <p>
+                &lt;td colspan="2"&gt;Esta célula ocupa 2 colunas&lt;/td&gt;
+            </p>
+
+            <h3>rowspan (unir linhas)</h3>
+            <p>
+                &lt;td rowspan="3"&gt;Esta célula ocupa 3 linhas&lt;/td&gt;
+            </p>
+
+            <h3>Exemplo visual:</h3>
+            <table border="1">
+                <tr>
+                    <th colspan="2">Cabeçalho mesclado</th>
+                    <th>Coluna 3</th>
+                </tr>
+                <tr>
+                    <td>Célula 1</td>
+                    <td>Célula 2</td>
+                    <td rowspan="2">Mesclado</td>
+                </tr>
+                <tr>
+                    <td>Célula 3</td>
+                    <td>Célula 4</td>
+                </tr>
+            </table>
+        </section>
+
+        <section>
+            <h2>Atributos da tabela</h2>
+
+            <h3>border</h3>
+            <p>
+                &lt;table border="1"&gt; - Mostra bordas<br>
+                &lt;table border="0"&gt; - Sem bordas
+            </p>
+
+            <h3>cellpadding</h3>
+            <p>
+                &lt;table cellpadding="10"&gt; - Espaço dentro das células
+            </p>
+
+            <h3>cellspacing</h3>
+            <p>
+                &lt;table cellspacing="5"&gt; - Espaço entre as células
+            </p>
+
+            <h3>summary</h3>
+            <p>
+                &lt;table summary="Tabela de vendas por mês"&gt;<br>
+                <br>
+                <strong>Propósito:</strong> Descrição para leitores de tela
+            </p>
+
+            <h3>caption</h3>
+            <p>
+                &lt;table&gt;<br>
+                &nbsp;&nbsp;&lt;caption&gt;Vendas de 2025&lt;/caption&gt;<br>
+                &nbsp;&nbsp;...<br>
+                &lt;/table&gt;
+            </p>
+            <p>
+                <strong>Propósito:</strong> Título visível da tabela
+            </p>
+        </section>
+
+        <section>
+            <h2>Exemplo completo: Tabela de horário</h2>
+            <p>
+                &lt;table border="1"&gt;<br>
+                &nbsp;&nbsp;&lt;caption&gt;&lt;strong&gt;Horário de Aulas - Turma A&lt;/strong&gt;&lt;/caption&gt;<br>
+                &nbsp;&nbsp;<br>
+                &nbsp;&nbsp;&lt;thead&gt;<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&lt;tr&gt;<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;th&gt;Horário&lt;/th&gt;<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;th&gt;Segunda&lt;/th&gt;<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;th&gt;Terça&lt;/th&gt;<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;th&gt;Quarta&lt;/th&gt;<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&lt;/tr&gt;<br>
+                &nbsp;&nbsp;&lt;/thead&gt;<br>
+                &nbsp;&nbsp;<br>
+                &nbsp;&nbsp;&lt;tbody&gt;<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&lt;tr&gt;<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;td&gt;08:00&lt;/td&gt;<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;td&gt;Português&lt;/td&gt;<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;td&gt;Matemática&lt;/td&gt;<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;td&gt;Inglês&lt;/td&gt;<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&lt;/tr&gt;<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&lt;tr&gt;<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;td&gt;09:00&lt;/td&gt;<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;td&gt;História&lt;/td&gt;<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;td&gt;Ciência&lt;/td&gt;<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;td&gt;Educação Física&lt;/td&gt;<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&lt;/tr&gt;<br>
+                &nbsp;&nbsp;&lt;/tbody&gt;<br>
+                &nbsp;&nbsp;<br>
+                &lt;/table&gt;
+            </p>
+        </section>
+
+        <section>
+            <h2>Boas práticas com tabelas</h2>
+            <ul>
+                <li>Use &lt;table&gt; <strong>apenas para dados tabulares</strong></li>
+                <li>Nunca use tabelas para layout (use CSS Grid ou Flexbox)</li>
+                <li>Sempre use &lt;thead&gt;, &lt;tbody&gt;, &lt;tfoot&gt; apropriadamente</li>
+                <li>Use &lt;th&gt; para cabeçalhos, não &lt;td&gt;</li>
+                <li>Adicione &lt;caption&gt; para descrição da tabela</li>
+                <li>Use atributos scope em &lt;th&gt; para indicar direção (row/col)</li>
+                <li>Mantenha tabelas simples e compreensíveis</li>
+                <li>Considere responsividade em dispositivos móveis</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>O atributo scope (importante para acessibilidade)</h3>
+            <p>
+                Indica se o cabeçalho é para linha ou coluna:
+            </p>
+            <p>
+                &lt;th scope="row"&gt;Janeiro&lt;/th&gt;&nbsp;&nbsp;&lt;!-- Cabeçalho de linha --&gt;<br>
+                &lt;th scope="col"&gt;Vendas&lt;/th&gt;&nbsp;&nbsp;&lt;!-- Cabeçalho de coluna --&gt;
+            </p>
+            <p>
+                <strong>Benefício:</strong> Leitores de tela entendem melhor a estrutura
+            </p>
+        </section>
+
+    </main>
+
+    <footer>
+        <hr>
+        <nav>
+            <a href="index.html">← Voltar ao Índice</a> | 
+            <a href="07-formularios.html">← Lição Anterior</a> |
+            <a href="09-semantica.html">Próxima Lição →</a>
+        </nav>
+        <p><small>Tutorial de HTML - Lição 8 de 10</small></p>
+    </footer>
+
+</body>
+</html>
