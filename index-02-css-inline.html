@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meu Site - CSS Inline</title>
+</head>
+
+<!--
+    ═══════════════════════════════════════════════════════════════════════
+    CSS INLINE - O QUE É?
+    ═══════════════════════════════════════════════════════════════════════
+    
+    CSS Inline é quando aplicamos estilos DIRETAMENTE no elemento HTML
+    usando o atributo "style".
+    
+    Sintaxe: <elemento style="propriedade: valor; outra-propriedade: valor;">
+    
+    VANTAGENS:
+    ✅ Alta especificidade (sobrescreve outros estilos)
+    ✅ Não precisa de arquivo CSS separado
+    ✅ Útil para testes rápidos
+    
+    DESVANTAGENS:
+    ❌ NÃO É REUTILIZÁVEL (precisa repetir em cada elemento)
+    ❌ Dificulta manutenção (para mudar uma cor, precisa editar vários lugares)
+    ❌ Mistura conteúdo (HTML) com apresentação (CSS)
+    ❌ Não permite usar media queries, pseudo-classes (:hover), etc.
+    ❌ Deixa o HTML muito poluído e difícil de ler
+    
+    QUANDO USAR:
+    - Estilos únicos que aparecem em um único lugar
+    - Estilos dinâmicos gerados por JavaScript
+    - Testes rápidos durante desenvolvimento
+    
+    QUANDO NÃO USAR:
+    - Para estilos que se repetem em vários elementos
+    - Em projetos de produção (use CSS externo)
+    
+    ═══════════════════════════════════════════════════════════════════════
+-->
+
+<body style="margin: 0; padding: 0; font-family: Arial, sans-serif; font-size: 16px; line-height: 1.6; color: #333333; background-color: #f5f5f5;">
+    <!--
+        BODY - Estilos aplicados:
+        - margin: 0; → Remove margem padrão do navegador
+        - padding: 0; → Remove padding padrão
+        - font-family: Arial, sans-serif; → Define fonte (Arial, ou qualquer sans-serif se Arial não existir)
+        - font-size: 16px; → Tamanho base da fonte (NOTA: idealmente usaríamos rem, mas inline não permite definir root)
+        - line-height: 1.6; → Espaçamento entre linhas (160% da altura da fonte) - ACESSIBILIDADE
+        - color: #333333; → Cor do texto (cinza escuro)
+        - background-color: #f5f5f5; → Cor de fundo (cinza bem claro)
+    -->
+    
+    <header style="background-color: #0066cc; color: #ffffff; padding: 1.5rem 2rem; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+        <!--
+            HEADER - Estilos aplicados:
+            - background-color: #0066cc; → Fundo azul
+            - color: #ffffff; → Texto branco (contraste com fundo azul)
+            - padding: 1.5rem 2rem; → Espaçamento interno (1.5rem cima/baixo, 2rem esquerda/direita)
+            - box-shadow: 0 2px 4px rgba(0,0,0,0.1); → Sombra sutil (0 horizontal, 2px vertical, 4px blur, 10% opacidade preta)
+        -->
+        
+        <h1 style="margin: 0 0 1rem 0; font-size: 2.5rem; font-weight: bold;">Bem-vindo ao Meu Site</h1>
+        <!--
+            H1 - Estilos aplicados:
+            - margin: 0 0 1rem 0; → Margem apenas embaixo (remove padrão de cima)
+            - font-size: 2.5rem; → Tamanho grande (2.5x o tamanho base)
+            - font-weight: bold; → Texto em negrito
+        -->
+        
+        <nav style="margin-top: 1rem;">
+            <!--
+                NAV - Estilos aplicados:
+                - margin-top: 1rem; → Espaço acima do menu
+            -->
+            
+            <ul style="list-style: none; margin: 0; padding: 0; display: flex; gap: 1.5rem;">
+                <!--
+                    UL - Estilos aplicados:
+                    - list-style: none; → Remove os bullets (bolinhas) da lista
+                    - margin: 0; padding: 0; → Remove espaçamentos padrão
+                    - display: flex; → Transforma em container flexível (itens ficam em linha)
+                    - gap: 1.5rem; → Espaçamento entre os itens (USABILIDADE - facilita clique)
+                -->
+                
+                <li style="display: inline-block;"><a href="#home" style="color: #ffffff; text-decoration: none; font-weight: 500; padding: 0.5rem 1rem; border-radius: 4px; background-color: rgba(255,255,255,0.1);">Home</a></li>
+                <li style="display: inline-block;"><a href="#sobre" style="color: #ffffff; text-decoration: none; font-weight: 500; padding: 0.5rem 1rem; border-radius: 4px; background-color: rgba(255,255,255,0.1);">Sobre</a></li>
+                <li style="display: inline-block;"><a href="#servicos" style="color: #ffffff; text-decoration: none; font-weight: 500; padding: 0.5rem 1rem; border-radius: 4px; background-color: rgba(255,255,255,0.1);">Serviços</a></li>
+                <li style="display: inline-block;"><a href="#contato" style="color: #ffffff; text-decoration: none; font-weight: 500; padding: 0.5rem 1rem; border-radius: 4px; background-color: rgba(255,255,255,0.1);">Contato</a></li>
+                <!--
+                    LI e A - Estilos aplicados:
+                    LI:
+                    - display: inline-block; → Mantém itens em linha mas permite padding
+                    
+                    A (links):
+                    - color: #ffffff; → Cor branca para os links
+                    - text-decoration: none; → Remove sublinhado padrão dos links
+                    - font-weight: 500; → Peso médio da fonte
+                    - padding: 0.5rem 1rem; → Área de clique maior (ACESSIBILIDADE/USABILIDADE)
+                    - border-radius: 4px; → Cantos arredondados
+                    - background-color: rgba(255,255,255,0.1); → Fundo branco semi-transparente (10% opacidade)
+                    
+                    NOTA: Aqui vemos o problema do CSS inline - estamos REPETINDO o mesmo estilo em 4 links!
+                    Se quiséssemos mudar a cor, teríamos que editar 4 lugares! 😓
+                -->
+            </ul>
+        </nav>
+    </header>
+    
+    <main style="max-width: 1200px; margin: 2rem auto; padding: 0 2rem;">
+        <!--
+            MAIN - Estilos aplicados:
+            - max-width: 1200px; → Largura máxima do conteúdo (USABILIDADE - linhas de texto não muito longas)
+            - margin: 2rem auto; → 2rem cima/baixo, auto esquerda/direita (centraliza)
+            - padding: 0 2rem; → Padding lateral (não deixa conteúdo grudar nas bordas em telas pequenas)
+        -->
+        
+        <section id="home" style="background-color: #ffffff; padding: 2rem; margin-bottom: 2rem; border-radius: 8px; box-shadow: 0 1px 3px rgba(0,0,0,0.1);">
+            <!--
+                SECTION - Estilos aplicados:
+                - background-color: #ffffff; → Fundo branco (contrasta com o cinza do body)
+                - padding: 2rem; → Espaçamento interno generoso (ACESSIBILIDADE - respiração)
+                - margin-bottom: 2rem; → Espaço entre seções
+                - border-radius: 8px; → Cantos arredondados
+                - box-shadow: 0 1px 3px rgba(0,0,0,0.1); → Sombra leve (dá profundidade)
+            -->
+            
+            <h2 style="color: #0066cc; margin-top: 0; margin-bottom: 1rem; font-size: 2rem; border-bottom: 3px solid #0066cc; padding-bottom: 0.5rem;">Home</h2>
+            <!--
+                H2 - Estilos aplicados:
+                - color: #0066cc; → Cor azul (mesma do header, cria identidade visual)
+                - margin-top: 0; → Remove margem superior
+                - margin-bottom: 1rem; → Espaço abaixo
+                - font-size: 2rem; → Tamanho grande mas menor que h1 (hierarquia visual)
+                - border-bottom: 3px solid #0066cc; → Linha embaixo (3px de espessura, sólida, azul)
+                - padding-bottom: 0.5rem; → Espaço entre texto e linha
+            -->
+            
+            <p style="margin-bottom: 1rem; font-size: 1rem; color: #555555;">Este é um site de demonstração para aprender CSS com foco em acessibilidade e usabilidade.</p>
+            <!--
+                P - Estilos aplicados:
+                - margin-bottom: 1rem; → Espaço entre parágrafos (ACESSIBILIDADE - facilita leitura)
+                - font-size: 1rem; → Tamanho padrão (16px geralmente)
+                - color: #555555; → Cinza médio (contraste 7:1 com branco - excelente para acessibilidade)
+            -->
+            
+            <p style="margin-bottom: 1.5rem; font-size: 1rem; color: #555555;">Atualmente, este HTML está usando <strong style="color: #0066cc; font-weight: bold;">CSS INLINE</strong>, onde os estilos são aplicados diretamente no atributo "style" de cada elemento.</p>
+            <!--
+                STRONG - Estilos aplicados:
+                - color: #0066cc; → Destaque em azul
+                - font-weight: bold; → Negrito (reforça a tag strong)
+            -->
+            
+            <img src="https://via.placeholder.com/800x400" alt="Imagem de exemplo mostrando um placeholder" style="max-width: 100%; height: auto; display: block; border-radius: 8px; margin-top: 1.5rem;">
+            <!--
+                IMG - Estilos aplicados:
+                - max-width: 100%; → Imagem responsiva (não ultrapassa o container)
+                - height: auto; → Mantém proporção da imagem
+                - display: block; → Remove espaço embaixo (imagens inline têm espaço para descenders)
+                - border-radius: 8px; → Cantos arredondados
+                - margin-top: 1.5rem; → Espaço acima
+            -->
+        </section>
+        
+        <section id="sobre" style="background-color: #ffffff; padding: 2rem; margin-bottom: 2rem; border-radius: 8px; box-shadow: 0 1px 3px rgba(0,0,0,0.1);">
+            <h2 style="color: #0066cc; margin-top: 0; margin-bottom: 1rem; font-size: 2rem; border-bottom: 3px solid #0066cc; padding-bottom: 0.5rem;">Sobre Nós</h2>
+            
+            <article style="margin-bottom: 2rem; padding-bottom: 2rem; border-bottom: 1px solid #e0e0e0;">
+                <!--
+                    ARTICLE - Estilos aplicados:
+                    - margin-bottom: 2rem; → Espaço abaixo
+                    - padding-bottom: 2rem; → Espaço interno abaixo
+                    - border-bottom: 1px solid #e0e0e0; → Linha divisória sutil (cinza claro)
+                -->
+                
+                <h3 style="color: #333333; margin-top: 0; margin-bottom: 1rem; font-size: 1.5rem; font-weight: 600;">Nossa História</h3>
+                <!--
+                    H3 - Estilos aplicados:
+                    - color: #333333; → Cinza escuro
+                    - margin-top: 0; → Remove margem superior
+                    - margin-bottom: 1rem; → Espaço abaixo
+                    - font-size: 1.5rem; → Menor que h2 (hierarquia: h1 > h2 > h3)
+                    - font-weight: 600; → Semi-negrito
+                -->
+                
+                <p style="margin-bottom: 1rem; font-size: 1rem; color: #555555;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                
+                <p style="margin-bottom: 0; font-size: 1rem; color: #555555;">Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+            </article>
+            
+            <article style="margin-bottom: 0;">
+                <h3 style="color: #333333; margin-top: 0; margin-bottom: 1rem; font-size: 1.5rem; font-weight: 600;">Nossa Missão</h3>
+                
+                <p style="margin-bottom: 1rem; font-size: 1rem; color: #555555;">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+                
+                <blockquote style="margin: 1.5rem 0; padding: 1rem 1.5rem; background-color: #f0f7ff; border-left: 4px solid #0066cc; font-style: italic; color: #333333;">
+                    <!--
+                        BLOCKQUOTE - Estilos aplicados:
+                        - margin: 1.5rem 0; → Margem cima/baixo (não lateral)
+                        - padding: 1rem 1.5rem; → Espaçamento interno
+                        - background-color: #f0f7ff; → Fundo azul claríssimo
+                        - border-left: 4px solid #0066cc; → Barra vertical azul à esquerda (indica citação)
+                        - font-style: italic; → Texto em itálico (estilo de citação)
+                        - color: #333333; → Cinza escuro
+                    -->
+                    "Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+                </blockquote>
+            </article>
+        </section>
+        
+        <section id="servicos" style="background-color: #ffffff; padding: 2rem; margin-bottom: 2rem; border-radius: 8px; box-shadow: 0 1px 3px rgba(0,0,0,0.1);">
+            <h2 style="color: #0066cc; margin-top: 0; margin-bottom: 1.5rem; font-size: 2rem; border-bottom: 3px solid #0066cc; padding-bottom: 0.5rem;">Nossos Serviços</h2>
+            
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem;">
+                <!--
+                    DIV Container - Estilos aplicados:
+                    - display: grid; → Layout em grade
+                    - grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); → Colunas responsivas
+                      (cria colunas que têm no mínimo 250px e se ajustam automaticamente)
+                    - gap: 1.5rem; → Espaço entre os cards
+                -->
+                
+                <div style="background-color: #f9f9f9; padding: 1.5rem; border-radius: 8px; border: 1px solid #e0e0e0; transition: transform 0.2s;">
+                    <!--
+                        DIV Card - Estilos aplicados:
+                        - background-color: #f9f9f9; → Fundo cinza bem claro
+                        - padding: 1.5rem; → Espaçamento interno
+                        - border-radius: 8px; → Cantos arredondados
+                        - border: 1px solid #e0e0e0; → Borda sutil
+                        - transition: transform 0.2s; → Animação suave (USABILIDADE - feedback visual)
+                        
+                        NOTA: O hover (:hover) NÃO pode ser aplicado via CSS inline! 
+                        Precisaríamos de JavaScript ou CSS interno/externo.
+                    -->
+                    
+                    <h3 style="color: #0066cc; margin-top: 0; margin-bottom: 1rem; font-size: 1.5rem; font-weight: 600;">Web Design</h3>
+                    
+                    <p style="margin-bottom: 1.5rem; font-size: 1rem; color: #555555; line-height: 1.6;">Criamos sites modernos e responsivos com foco em user experience.</p>
+                    
+                    <button style="background-color: #0066cc; color: #ffffff; border: none; padding: 0.75rem 1.5rem; font-size: 1rem; border-radius: 4px; cursor: pointer; font-weight: 500; width: 100%;">Saiba Mais</button>
+                    <!--
+                        BUTTON - Estilos aplicados:
+                        - background-color: #0066cc; → Fundo azul
+                        - color: #ffffff; → Texto branco (contraste forte - ACESSIBILIDADE)
+                        - border: none; → Remove borda padrão do navegador
+                        - padding: 0.75rem 1.5rem; → Área de toque grande (ACESSIBILIDADE - min 44x44px)
+                        - font-size: 1rem; → Tamanho legível
+                        - border-radius: 4px; → Cantos arredondados
+                        - cursor: pointer; → Muda cursor ao passar por cima (USABILIDADE - indica clicabilidade)
+                        - font-weight: 500; → Semi-negrito
+                        - width: 100%; → Ocupa toda a largura do card
+                        
+                        PROBLEMA: Não conseguimos aplicar :hover, :focus, :active via inline!
+                        Estados interativos precisam de CSS interno ou externo.
+                    -->
+                </div>
+                
+                <div style="background-color: #f9f9f9; padding: 1.5rem; border-radius: 8px; border: 1px solid #e0e0e0; transition: transform 0.2s;">
+                    <h3 style="color: #0066cc; margin-top: 0; margin-bottom: 1rem; font-size: 1.5rem; font-weight: 600;">Desenvolvimento</h3>
+                    <p style="margin-bottom: 1.5rem; font-size: 1rem; color: #555555; line-height: 1.6;">Desenvolvemos aplicações web robustas e escaláveis.</p>
+                    <button style="background-color: #0066cc; color: #ffffff; border: none; padding: 0.75rem 1.5rem; font-size: 1rem; border-radius: 4px; cursor: pointer; font-weight: 500; width: 100%;">Saiba Mais</button>
+                </div>
+                
+                <div style="background-color: #f9f9f9; padding: 1.5rem; border-radius: 8px; border: 1px solid #e0e0e0; transition: transform 0.2s;">
+                    <h3 style="color: #0066cc; margin-top: 0; margin-bottom: 1rem; font-size: 1.5rem; font-weight: 600;">Consultoria</h3>
+                    <p style="margin-bottom: 1.5rem; font-size: 1rem; color: #555555; line-height: 1.6;">Oferecemos consultoria especializada em tecnologias web.</p>
+                    <button style="background-color: #0066cc; color: #ffffff; border: none; padding: 0.75rem 1.5rem; font-size: 1rem; border-radius: 4px; cursor: pointer; font-weight: 500; width: 100%;">Saiba Mais</button>
+                </div>
+                
+                <!--
+                    💡 OBSERVE A REPETIÇÃO!
+                    Os 3 cards têm EXATAMENTE os mesmos estilos, mas precisamos copiar/colar tudo.
+                    Se quisermos mudar a cor dos cards, precisamos editar 3 lugares!
+                    Isso é INSUSTENTÁVEL em projetos grandes! 😓
+                -->
+            </div>
+        </section>
+        
+        <section id="contato" style="background-color: #ffffff; padding: 2rem; margin-bottom: 2rem; border-radius: 8px; box-shadow: 0 1px 3px rgba(0,0,0,0.1);">
+            <h2 style="color: #0066cc; margin-top: 0; margin-bottom: 1.5rem; font-size: 2rem; border-bottom: 3px solid #0066cc; padding-bottom: 0.5rem;">Entre em Contato</h2>
+            
+            <form style="display: flex; flex-direction: column; gap: 1.5rem; max-width: 600px;">
+                <!--
+                    FORM - Estilos aplicados:
+                    - display: flex; → Layout flexível
+                    - flex-direction: column; → Itens empilhados verticalmente
+                    - gap: 1.5rem; → Espaço entre os campos (ACESSIBILIDADE)
+                    - max-width: 600px; → Largura máxima (facilita leitura)
+                -->
+                
+                <div style="display: flex; flex-direction: column; gap: 0.5rem;">
+                    <!--
+                        DIV Field Group - Estilos aplicados:
+                        - display: flex; flex-direction: column; → Empilha label e input
+                        - gap: 0.5rem; → Pequeno espaço entre label e input
+                    -->
+                    
+                    <label for="nome" style="font-weight: 600; color: #333333; font-size: 1rem;">Nome:</label>
+                    <!--
+                        LABEL - Estilos aplicados:
+                        - font-weight: 600; → Semi-negrito (destaca o label)
+                        - color: #333333; → Cinza escuro
+                        - font-size: 1rem; → Tamanho padrão
+                    -->
+                    
+                    <input type="text" id="nome" name="nome" required style="padding: 0.75rem; font-size: 1rem; border: 2px solid #d0d0d0; border-radius: 4px; font-family: Arial, sans-serif; transition: border-color 0.2s;">
+                    <!--
+                        INPUT - Estilos aplicados:
+                        - padding: 0.75rem; → Área de toque confortável (ACESSIBILIDADE)
+                        - font-size: 1rem; → Tamanho legível (>=16px evita zoom em iOS)
+                        - border: 2px solid #d0d0d0; → Borda cinza
+                        - border-radius: 4px; → Cantos arredondados
+                        - font-family: Arial, sans-serif; → Mesma fonte do site
+                        - transition: border-color 0.2s; → Animação suave na borda
+                        
+                        PROBLEMA: Não podemos aplicar :focus via inline!
+                        O ideal seria border azul ao focar (ACESSIBILIDADE).
+                    -->
+                </div>
+                
+                <div style="display: flex; flex-direction: column; gap: 0.5rem;">
+                    <label for="email" style="font-weight: 600; color: #333333; font-size: 1rem;">E-mail:</label>
+                    <input type="email" id="email" name="email" required style="padding: 0.75rem; font-size: 1rem; border: 2px solid #d0d0d0; border-radius: 4px; font-family: Arial, sans-serif; transition: border-color 0.2s;">
+                </div>
+                
+                <div style="display: flex; flex-direction: column; gap: 0.5rem;">
+                    <label for="mensagem" style="font-weight: 600; color: #333333; font-size: 1rem;">Mensagem:</label>
+                    <textarea id="mensagem" name="mensagem" rows="5" required style="padding: 0.75rem; font-size: 1rem; border: 2px solid #d0d0d0; border-radius: 4px; font-family: Arial, sans-serif; resize: vertical; transition: border-color 0.2s;"></textarea>
+                    <!--
+                        TEXTAREA - Estilos aplicados (similares ao input):
+                        - resize: vertical; → Permite redimensionar apenas verticalmente (USABILIDADE)
+                          (evita quebra de layout horizontal)
+                    -->
+                </div>
+                
+                <button type="submit" style="background-color: #0066cc; color: #ffffff; border: none; padding: 1rem 2rem; font-size: 1.125rem; border-radius: 4px; cursor: pointer; font-weight: 600; align-self: flex-start;">Enviar</button>
+                <!--
+                    BUTTON - Estilos aplicados:
+                    - align-self: flex-start; → Alinha à esquerda (não estica 100% como no form)
+                    - Outros estilos similares aos botões anteriores
+                -->
+            </form>
+        </section>
+    </main>
+    
+    <aside style="background-color: #fff9e6; padding: 2rem; margin: 2rem auto; max-width: 1200px; border-left: 4px solid #ffa500; border-radius: 4px;">
+        <!--
+            ASIDE - Estilos aplicados:
+            - background-color: #fff9e6; → Fundo amarelo claríssimo (diferencia do conteúdo principal)
+            - padding: 2rem; → Espaçamento interno
+            - margin: 2rem auto; → Centraliza e espaça
+            - max-width: 1200px; → Mesma largura do main
+            - border-left: 4px solid #ffa500; → Barra laranja à esquerda (indicador visual)
+            - border-radius: 4px; → Cantos arredondados
+        -->
+        
+        <h3 style="color: #cc6600; margin-top: 0; margin-bottom: 1rem; font-size: 1.5rem; font-weight: 600;">Informações Adicionais</h3>
+        
+        <p style="margin-bottom: 1rem; font-size: 1rem; color: #555555;">Este é um exemplo de conteúdo lateral que complementa o conteúdo principal.</p>
+        
+        <ul style="margin: 0; padding-left: 1.5rem; color: #555555;">
+            <!--
+                UL - Estilos aplicados:
+                - margin: 0; → Remove margem
+                - padding-left: 1.5rem; → Espaço para os bullets
+                - color: #555555; → Cor dos bullets e texto
+            -->
+            <li style="margin-bottom: 0.5rem;">Informação 1</li>
+            <li style="margin-bottom: 0.5rem;">Informação 2</li>
+            <li style="margin-bottom: 0;">Informação 3</li>
+        </ul>
+    </aside>
+    
+    <footer style="background-color: #2c2c2c; color: #ffffff; padding: 2rem; text-align: center; margin-top: 4rem;">
+        <!--
+            FOOTER - Estilos aplicados:
+            - background-color: #2c2c2c; → Fundo cinza escuro
+            - color: #ffffff; → Texto branco
+            - padding: 2rem; → Espaçamento interno
+            - text-align: center; → Centraliza texto
+            - margin-top: 4rem; → Grande espaço acima (separa do conteúdo)
+        -->
+        
+        <p style="margin: 0 0 0.5rem 0; font-size: 0.875rem;">&copy; 2026 Meu Site. Todos os direitos reservados.</p>
+        <!--
+            P - Estilos aplicados:
+            - margin: 0 0 0.5rem 0; → Margem apenas embaixo
+            - font-size: 0.875rem; → Texto menor (14px aprox.)
+        -->
+        
+        <p style="margin: 0 0 1rem 0; font-size: 0.875rem; color: #aaaaaa;">Desenvolvido com foco em acessibilidade e usabilidade.</p>
+        <!--
+            - color: #aaaaaa; → Cinza mais claro (texto secundário)
+        -->
+        
+        <address style="font-style: normal; font-size: 0.875rem; color: #aaaaaa; margin: 0;">
+            <!--
+                ADDRESS - Estilos aplicados:
+                - font-style: normal; → Remove itálico padrão da tag address
+                - font-size: 0.875rem; → Texto menor
+                - color: #aaaaaa; → Cinza claro
+                - margin: 0; → Remove margem
+            -->
+            Contato: <a href="mailto:contato@meusite.com" style="color: #66b3ff; text-decoration: none;">contato@meusite.com</a>
+            <!--
+                A - Estilos aplicados:
+                - color: #66b3ff; → Azul claro (visível em fundo escuro - ACESSIBILIDADE)
+                - text-decoration: none; → Remove sublinhado
+                
+                PROBLEMA: Ideal seria ter sublinhado no :hover, mas inline não permite!
+            -->
+        </address>
+    </footer>
+    
+</body>
+
+<!--
+    ═══════════════════════════════════════════════════════════════════════
+    CONCLUSÃO SOBRE CSS INLINE
+    ═══════════════════════════════════════════════════════════════════════
+    
+    PROBLEMAS OBSERVADOS NESTE ARQUIVO:
+    
+    1. ❌ REPETIÇÃO MASSIVA
+       - Estilos dos 3 cards de serviço são idênticos mas copiados 3 vezes
+       - Estilos dos links do menu são idênticos mas copiados 4 vezes
+       - Isso torna manutenção um PESADELO
+    
+    2. ❌ CÓDIGO POLUÍDO
+       - O HTML ficou extremamente difícil de ler
+       - Precisa rolar horizontalmente para ver os estilos
+       - Dificulta encontrar o conteúdo entre tanto CSS
+    
+    3. ❌ IMPOSSÍVEL USAR PSEUDO-CLASSES
+       - Não podemos aplicar :hover, :focus, :active, :visited
+       - Prejudica ACESSIBILIDADE (sem indicador de foco)
+       - Prejudica USABILIDADE (sem feedback em hover)
+    
+    4. ❌ IMPOSSÍVEL USAR MEDIA QUERIES
+       - Não podemos adaptar estilos para mobile/tablet/desktop
+       - Layout não é realmente responsivo
+    
+    5. ❌ ALTA ESPECIFICIDADE
+       - CSS inline tem prioridade alta, dificulta sobrescrita
+    
+    6. ❌ NÃO REUTILIZÁVEL
+       - Precisamos copiar/colar estilos entre páginas
+    
+    ═══════════════════════════════════════════════════════════════════════
+    PRÓXIMO PASSO: CSS INTERNO
+    ═══════════════════════════════════════════════════════════════════════
+    
+    Na próxima versão, vamos ver como CSS INTERNO (dentro de <style> no <head>)
+    resolve TODOS esses problemas mantendo o CSS no mesmo arquivo HTML!
+    
+    Benefícios que teremos:
+    ✅ Reutilização (definimos uma vez, aplicamos em vários elementos)
+    ✅ Código limpo (HTML volta a ser legível)
+    ✅ Pseudo-classes funcionam (:hover, :focus, etc.)
+    ✅ Media queries funcionam (responsividade real)
+    ✅ Seletores poderosos (classes, IDs, descendentes, etc.)
+    
+-->
+
+</html>

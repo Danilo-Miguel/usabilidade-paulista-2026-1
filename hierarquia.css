@@ -1,0 +1,22 @@
+/* ═══════════════════════════════════════════════════════════════
+   CSS EXTERNO
+   Especificidade: BAIXA (é sobrescrito por interno e inline)
+   ═══════════════════════════════════════════════════════════════ */
+
+.box {
+    background-color: lightblue;
+    color: blue;
+    padding: 1rem;
+    margin: 1rem 0;
+    border: 3px solid blue;
+    border-radius: 8px;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.box::after {
+    content: " [CSS EXTERNO]";
+    font-size: 0.8rem;
+    font-weight: normal;
+    color: #666;
+}

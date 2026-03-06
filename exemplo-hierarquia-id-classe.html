@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS - Hierarquia, IDs e Classes</title>
+    
+    <style>
+        /* ═══════════════════════════════════════════════════════════════
+           SELETORES CSS - HIERARQUIA E ESPECIFICIDADE
+           ═══════════════════════════════════════════════════════════════
+           
+           TIPOS DE SELETORES (do menos para o mais específico):
+           
+           1. SELETOR DE TAG (elemento)
+              Sintaxe: p { color: red; }
+              Especificidade: 1
+              
+           2. SELETOR DE CLASSE
+              Sintaxe: .minha-classe { color: blue; }
+              Especificidade: 10
+              Usa-se: Quando o estilo pode ser REUTILIZADO em vários elementos
+              
+           3. SELETOR DE ID
+              Sintaxe: #meu-id { color: green; }
+              Especificidade: 100
+              Usa-se: Para elemento ÚNICO na página
+              
+           4. INLINE STYLE (no atributo style)
+              Sintaxe: style="color: purple;"
+              Especificidade: 1000
+           
+           REGRA DE OURO:
+           Quando há conflito, o seletor MAIS ESPECÍFICO vence!
+           
+           ═══════════════════════════════════════════════════════════════ */
+        
+        body {
+            font-family: Arial, sans-serif;
+            padding: 2rem;
+            background-color: #f5f5f5;
+            line-height: 1.6;
+        }
+        
+        /* ──────────────────────────────────────────────────────────────
+           EXEMPLO 1: SELETOR DE TAG (Elemento)
+           ────────────────────────────────────────────────────────────── */
+        
+        /* Aplica a TODOS os parágrafos */
+        p {
+            color: #333333;
+            font-size: 1rem;
+            margin-bottom: 1rem;
+            padding: 0.5rem;
+            background-color: #ffffff;
+        }
+        
+        /* ──────────────────────────────────────────────────────────────
+           EXEMPLO 2: SELETOR DE CLASSE
+           
+           Classes começam com . (ponto)
+           Podem ser REUTILIZADAS em múltiplos elementos
+           Especificidade: MAIOR que tag, MENOR que ID
+           ────────────────────────────────────────────────────────────── */
+        
+        .destaque {
+            background-color: #fffacd; /* Amarelo claro */
+            border-left: 4px solid #ffa500; /* Barra laranja */
+            font-weight: bold;
+        }
+        
+        .alerta {
+            background-color: #ffe6e6; /* Vermelho claro */
+            border-left: 4px solid #ff4444;
+            color: #cc0000;
+        }
+        
+        .sucesso {
+            background-color: #e6ffe6; /* Verde claro */
+            border-left: 4px solid #44ff44;
+            color: #006600;
+        }
+        
+        /* Classes podem ser combinadas! */
+        .texto-grande {
+            font-size: 1.25rem;
+        }
+        
+        .centralizado {
+            text-align: center;
+        }
+        
+        /* ──────────────────────────────────────────────────────────────
+           EXEMPLO 3: SELETOR DE ID
+           
+           IDs começam com # (hashtag/cerquilha)
+           Devem ser ÚNICOS na página (apenas um elemento por ID)
+           Especificidade: MAIOR que classe
+           ────────────────────────────────────────────────────────────── */
+        
+        #cabecalho-principal {
+            background-color: #0066cc;
+            color: #ffffff;
+            padding: 1.5rem;
+            text-align: center;
+            margin-bottom: 2rem;
+            border-radius: 8px;
+        }
+        
+        #rodape-principal {
+            background-color: #2c2c2c;
+            color: #ffffff;
+            padding: 1rem;
+            text-align: center;
+            margin-top: 2rem;
+            font-size: 0.875rem;
+        }
+        
+        /* ──────────────────────────────────────────────────────────────
+           HIERARQUIA E CONFLITOS - QUEM VENCE?
+           ────────────────────────────────────────────────────────────── */
+        
+        /* Seletor de tag - especificidade: 1 */
+        p {
+            color: #333333; /* Cor padrão */
+        }
+        
+        /* Seletor de classe - especificidade: 10 (VENCE o tag) */
+        .texto-azul {
+            color: #0066cc;
+        }
+        
+        /* Seletor de ID - especificidade: 100 (VENCE a classe) */
+        #texto-especial {
+            color: #ff0000;
+        }
+        
+        /* Combinação de seletores aumenta especificidade */
+        div p {
+            /* Especificidade: 1 + 1 = 2 */
+            /* "p dentro de div" */
+        }
+        
+        div.container p {
+            /* Especificidade: 1 + 10 + 1 = 12 */
+            /* "p dentro de div com classe container" */
+        }
+        
+        #conteudo p.destaque {
+            /* Especificidade: 100 + 1 + 10 = 111 */
+            /* "p com classe destaque dentro do ID conteudo" */
+            font-style: italic;
+        }
+        
+        /* ──────────────────────────────────────────────────────────────
+           BOAS PRÁTICAS
+           ────────────────────────────────────────────────────────────── */
+        
+        /* ✅ BOM: Usar classes para estilos reutilizáveis */
+        .botao {
+            background-color: #0066cc;
+            color: #ffffff;
+            padding: 0.75rem 1.5rem;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+        
+        .botao:hover {
+            background-color: #0056b3;
+        }
+        
+        /* ✅ BOM: Usar IDs para elementos únicos de layout */
+        #navegacao-principal {
+            /* Menu principal - único na página */
+        }
+        
+        /* ❌ EVITAR: IDs para estilos reutilizáveis */
+        /* Porque ID só pode ser usado UMA VEZ */
+        
+        /* ❌ EVITAR: Especificidade excessiva */
+        /* body div#conteudo section.artigos article p.paragrafo { } */
+        /* Muito específico = difícil de sobrescrever */
+        
+        /* ──────────────────────────────────────────────────────────────
+           SELETORES MÚLTIPLOS
+           ────────────────────────────────────────────────────────────── */
+        
+        /* Aplica o mesmo estilo a múltiplos elementos */
+        h1, h2, h3 {
+            color: #0066cc;
+            margin-bottom: 1rem;
+        }
+        
+        /* Múltiplas classes */
+        .destaque, .alerta, .sucesso {
+            padding: 1rem;
+            margin-bottom: 1rem;
+            border-radius: 4px;
+        }
+        
+        /* ──────────────────────────────────────────────────────────────
+           CONTAINER DE DEMONSTRAÇÃO
+           ────────────────────────────────────────────────────────────── */
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: #ffffff;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+        
+        .exemplo {
+            margin-bottom: 2rem;
+            padding: 1rem;
+            background-color: #f9f9f9;
+            border: 1px solid #e0e0e0;
+            border-radius: 4px;
+        }
+        
+        .exemplo h3 {
+            margin-top: 0;
+            color: #333333;
+            font-size: 1.25rem;
+            border-bottom: 2px solid #0066cc;
+            padding-bottom: 0.5rem;
+        }
+        
+        code {
+            background-color: #2c2c2c;
+            color: #66ff66;
+            padding: 0.25rem 0.5rem;
+            border-radius: 3px;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9rem;
+        }
+        
+        .tabela-especificidade {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 1rem;
+        }
+        
+        .tabela-especificidade th,
+        .tabela-especificidade td {
+            border: 1px solid #ddd;
+            padding: 0.75rem;
+            text-align: left;
+        }
+        
+        .tabela-especificidade th {
+            background-color: #0066cc;
+            color: white;
+            font-weight: bold;
+        }
+        
+        .tabela-especificidade tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+    </style>
+</head>
+<body>
+    <!-- ═══════════════════════════════════════════════════════════════
+         USANDO ID - Elemento ÚNICO na página
+         ID no HTML: id="nome-do-id"
+         ID no CSS: #nome-do-id { }
+         ═══════════════════════════════════════════════════════════════ -->
+    
+    <div id="cabecalho-principal">
+        <h1>CSS: Hierarquia, IDs e Classes</h1>
+        <p style="margin: 0;">Exemplo focado em seletores e especificidade</p>
+    </div>
+    
+    <div class="container">
+        
+        <!-- ═══════════════════════════════════════════════════════════
+             EXEMPLO 1: CLASSES (Reutilizáveis)
+             ═══════════════════════════════════════════════════════════ -->
+        
+        <div class="exemplo">
+            <h3>1. Seletor de CLASSE (.classe)</h3>
+            
+            <p>Classes são REUTILIZÁVEIS. Pode usar a mesma classe em vários elementos.</p>
+            <p>No HTML: <code>class="destaque"</code></p>
+            <p>No CSS: <code>.destaque { ... }</code></p>
+            
+            <p class="destaque">Este parágrafo tem a classe "destaque" (fundo amarelo)</p>
+            <p class="alerta">Este parágrafo tem a classe "alerta" (fundo vermelho)</p>
+            <p class="sucesso">Este parágrafo tem a classe "sucesso" (fundo verde)</p>
+            
+            <p class="destaque">Posso usar "destaque" de novo! Classes são REUTILIZÁVEIS. ✅</p>
+        </div>
+        
+        <!-- ═══════════════════════════════════════════════════════════
+             EXEMPLO 2: IDs (Únicos)
+             ═══════════════════════════════════════════════════════════ -->
+        
+        <div class="exemplo">
+            <h3>2. Seletor de ID (#id)</h3>
+            
+            <p>IDs são ÚNICOS. Cada ID só pode aparecer UMA VEZ na página.</p>
+            <p>No HTML: <code>id="meu-id"</code></p>
+            <p>No CSS: <code>#meu-id { ... }</code></p>
+            
+            <p id="texto-especial">
+                Este parágrafo tem o ID "texto-especial" (texto vermelho).
+                Não posso usar este ID em outro elemento! ⚠️
+            </p>
+            
+            <p><strong>Quando usar ID?</strong></p>
+            <ul>
+                <li>Elementos únicos de layout (header, footer, nav principal)</li>
+                <li>Âncoras de navegação (links internos)</li>
+                <li>JavaScript (getElementById é muito rápido)</li>
+            </ul>
+            
+            <p><strong>Quando usar CLASSE?</strong></p>
+            <ul>
+                <li>Estilos que se repetem (botões, cards, badges)</li>
+                <li>Na dúvida, USE CLASSE! 👍</li>
+            </ul>
+        </div>
+        
+        <!-- ═══════════════════════════════════════════════════════════
+             EXEMPLO 3: Combinando Classes
+             ═══════════════════════════════════════════════════════════ -->
+        
+        <div class="exemplo">
+            <h3>3. Combinando Múltiplas Classes</h3>
+            
+            <p>Um elemento pode ter VÁRIAS classes ao mesmo tempo!</p>
+            <p>No HTML: <code>class="classe1 classe2 classe3"</code></p>
+            
+            <p class="destaque texto-grande">
+                Este parágrafo tem duas classes: "destaque" E "texto-grande"
+            </p>
+            
+            <p class="alerta texto-grande centralizado">
+                Este tem TRÊS classes: "alerta", "texto-grande" e "centralizado"
+            </p>
+            
+            <p>Isso permite criar estilos modulares e reutilizáveis! 🎯</p>
+        </div>
+        
+        <!-- ═══════════════════════════════════════════════════════════
+             EXEMPLO 4: Hierarquia e Especificidade (QUEM VENCE?)
+             ═══════════════════════════════════════════════════════════ -->
+        
+        <div class="exemplo" id="conteudo">
+            <h3>4. Hierarquia CSS - Quem Vence?</h3>
+            
+            <p>Quando há conflito, o seletor MAIS ESPECÍFICO vence!</p>
+            
+            <p class="texto-azul">
+                Este parágrafo tem classe "texto-azul" (azul).
+                A classe (especificidade 10) vence o seletor de tag p (especificidade 1).
+            </p>
+            
+            <p class="texto-azul" id="texto-especial">
+                Este tem classe "texto-azul" E ID "texto-especial" (vermelho).
+                O ID (especificidade 100) vence a classe (especificidade 10)!
+            </p>
+            
+            <p class="destaque">
+                Este parágrafo está dentro do ID "conteudo" e tem classe "destaque".
+                O seletor #conteudo p.destaque tem especificidade 111 e deixa em itálico!
+            </p>
+            
+            <table class="tabela-especificidade">
+                <thead>
+                    <tr>
+                        <th>Seletor</th>
+                        <th>Especificidade</th>
+                        <th>Exemplo</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Inline Style</td>
+                        <td>1000</td>
+                        <td><code>style="color: red;"</code></td>
+                    </tr>
+                    <tr>
+                        <td>ID</td>
+                        <td>100</td>
+                        <td><code>#meu-id</code></td>
+                    </tr>
+                    <tr>
+                        <td>Classe</td>
+                        <td>10</td>
+                        <td><code>.minha-classe</code></td>
+                    </tr>
+                    <tr>
+                        <td>Tag (elemento)</td>
+                        <td>1</td>
+                        <td><code>p</code></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        
+        <!-- ═══════════════════════════════════════════════════════════
+             EXEMPLO 5: Boas Práticas
+             ═══════════════════════════════════════════════════════════ -->
+        
+        <div class="exemplo">
+            <h3>5. Boas Práticas</h3>
+            
+            <p><strong>✅ FAÇA:</strong></p>
+            <ul>
+                <li>Use <strong>classes</strong> para estilos reutilizáveis (botões, cards, badges)</li>
+                <li>Use <strong>IDs</strong> para elementos únicos de layout</li>
+                <li>Combine classes para criar estilos modulares</li>
+                <li>Mantenha especificidade baixa (mais fácil de sobrescrever)</li>
+                <li>Use nomes descritivos: <code>.botao-primario</code> melhor que <code>.azul</code></li>
+            </ul>
+            
+            <p><strong>❌ EVITE:</strong></p>
+            <ul>
+                <li>Usar ID para estilos que se repetem</li>
+                <li>Especificidade excessiva: <code>body div#x section.y p.z</code></li>
+                <li>IDs múltiplos na mesma página (HTML inválido!)</li>
+                <li>Inline styles (dificulta manutenção)</li>
+                <li>Nomes genéricos: <code>.texto</code>, <code>.caixa</code></li>
+            </ul>
+            
+            <p><strong>Exemplo prático:</strong></p>
+            <button class="botao">Botão com Classe (Reutilizável)</button>
+        </div>
+        
+    </div>
+    
+    <!-- ID único para o rodapé -->
+    <div id="rodape-principal">
+        <p style="margin: 0;">
+            Tutorial de Hierarquia CSS | ID único = #rodape-principal
+        </p>
+    </div>
+    
+</body>
+</html>

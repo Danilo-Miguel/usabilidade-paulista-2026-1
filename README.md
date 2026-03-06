@@ -1,1 +1,0 @@
-# usabilidade-paulista-2026-1
