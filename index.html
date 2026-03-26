@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <!-- Div onde o React será renderizado -->
+    <div id="root"></div>
+
+    <!-- Bibliotecas do React -->
+    <script src="https://unpkg.com/react@18/umd/react.development.js">  
+
+    </script>
+
+<!-- React DOM  faz a ponte entre o react e o DOM do navegador-->
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js">
+    </script>
+<!-- Babel para transpilar JSX -->
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>    
+
+    <script type="text/babel">
+        // Componente de exemplo
+       
+
+        ReactDOM.createRoot(document.getElementById('root')).render(
+            <h1>Olá mundo</h1>
+        );
+    
+
+</script>
+    
+</body>
+</html>
