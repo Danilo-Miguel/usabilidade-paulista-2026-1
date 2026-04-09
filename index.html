@@ -1,36 +1,81 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Aula 2  - Styled Componentes</title>
 </head>
 <body>
-
-    <!-- Div onde o React será renderizado -->
     <div id="root"></div>
 
-    <!-- Bibliotecas do React -->
-    <script src="https://unpkg.com/react@18/umd/react.development.js">  
+    <script src ="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script src ="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
 
-    </script>
-
-<!-- React DOM  faz a ponte entre o react e o DOM do navegador-->
-    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js">
-    </script>
-<!-- Babel para transpilar JSX -->
-    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>    
+    <script src="https://unpkg.com/styled-components/dist/styled-components.min.js"></script>
 
     <script type="text/babel">
-        // Componente de exemplo
-       
 
-        ReactDOM.createRoot(document.getElementById('root')).render(
-            <h1>Olá mundo</h1>
-        );
-    
+        function ListaComDescricao(){
 
-</script>
+            const items =[
+            {id: 1, titulo: 'Primeiro', descricao: 'Descrição 1'},
+            {id: 2, segundo: 'Segundo', descricao: 'Descrição 2'},
+            {id: 3, terceiro: 'Terceiro', descricao: 'Descrição 3'}
+        ]
+        
+
+        // const Titulo = styled.h1`
+        //     color: purple;
+        //     background-color: lavender;
+        //     text-align: center;
+        //     padding: 10px;
+        //     border-radius: 8px;
+        // `;
+           return (
+                <dl>
+                    {items.map(item => (
+                        <React.Fragment key={item.id}>
+                            <dt>{item.titulo}</dt>
+                            <dd>{item.descricao}</dd>
+                        </React.Fragment>
+                    ))}
+                </dl>
+            );
+        
+            }
+
+
+     function Perfil({usuario}){
+     return(
+        <div>
+        <h1>Perfil</h1>
+        {usuario.admin ? (
+            <>
+             <p> Painel de Administrador </p>
+            <button> Configurações avançadas </button>
+            <button> Gerenciar Usuários </button>
+            </>
+        ):(
+            <>
+            <p> Painel de usuário  </p>
+            <button> Editar Perfil </button>
+
+            </>
+        )}
+ 
+        </div>
+     )
+
+     }       
+
+
+
+const usuario = {nome: "Danilo", admin: true}
+ReactDOM.createRoot(document.getElementById('root')).render
+(<Perfil usuario={usuario}/>);
+
+    </script>
     
 </body>
 </html>
