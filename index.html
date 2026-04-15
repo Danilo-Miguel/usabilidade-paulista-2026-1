@@ -1,81 +1,13 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aula 2  - Styled Componentes</title>
-</head>
-<body>
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>usabilidade-paulista-2026-1</title>
+  </head>
+  <body>
     <div id="root"></div>
-
-    <script src ="https://unpkg.com/react@18/umd/react.development.js"></script>
-    <script src ="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
-    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
-
-    <script src="https://unpkg.com/styled-components/dist/styled-components.min.js"></script>
-
-    <script type="text/babel">
-
-        function ListaComDescricao(){
-
-            const items =[
-            {id: 1, titulo: 'Primeiro', descricao: 'Descrição 1'},
-            {id: 2, segundo: 'Segundo', descricao: 'Descrição 2'},
-            {id: 3, terceiro: 'Terceiro', descricao: 'Descrição 3'}
-        ]
-        
-
-        // const Titulo = styled.h1`
-        //     color: purple;
-        //     background-color: lavender;
-        //     text-align: center;
-        //     padding: 10px;
-        //     border-radius: 8px;
-        // `;
-           return (
-                <dl>
-                    {items.map(item => (
-                        <React.Fragment key={item.id}>
-                            <dt>{item.titulo}</dt>
-                            <dd>{item.descricao}</dd>
-                        </React.Fragment>
-                    ))}
-                </dl>
-            );
-        
-            }
-
-
-     function Perfil({usuario}){
-     return(
-        <div>
-        <h1>Perfil</h1>
-        {usuario.admin ? (
-            <>
-             <p> Painel de Administrador </p>
-            <button> Configurações avançadas </button>
-            <button> Gerenciar Usuários </button>
-            </>
-        ):(
-            <>
-            <p> Painel de usuário  </p>
-            <button> Editar Perfil </button>
-
-            </>
-        )}
- 
-        </div>
-     )
-
-     }       
-
-
-
-const usuario = {nome: "Danilo", admin: true}
-ReactDOM.createRoot(document.getElementById('root')).render
-(<Perfil usuario={usuario}/>);
-
-    </script>
-    
-</body>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
 </html>
