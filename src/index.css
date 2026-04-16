@@ -6,6 +6,12 @@
 
 @layer base {
   body {
+    /* @apply detalhado:
+       m-0 -> remove margem padrao do body.
+       bg-sand -> fundo sand definido no tema.
+       font-body -> aplica fonte base definida no tema.
+       text-ink -> cor de texto principal.
+       antialiased -> suaviza renderizacao das fontes. */
     @apply m-0 bg-sand font-body text-ink antialiased;
   }
 
